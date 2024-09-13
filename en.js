@@ -1,7 +1,7 @@
 var translations_en = {
   
   table_emissions_title: `Total Emissions`,
-  sidebar_title: `Sources of Carbon in South AfricaTEST`,
+  sidebar_title: `Sources of Carbon in South Africa_test`,
   introduction_title: `<h2>General Information</h2>`,
   introduction_text: `<h3>Introduction</h3>
   CO<sub>2</sub> is a greenhouse gas produced in many cases as an industrial byproduct, which is currently emitted into the atmosphere in most of the production sites. However, this gas has the potential to be used as raw material for Power-to-X (PtX) products containing carbon in their molecules, such as e-methanol or synthetic fuels (e-fuels). The competitiveness of these products can be highly affected by the availability and quality of the CO<sub>2</sub> source that will be used.
