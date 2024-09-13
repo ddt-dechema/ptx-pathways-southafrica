@@ -1,6 +1,6 @@
 var translations_en = {
   
-  table_emissions_title: `Total Emissions`,
+  table_emissions_title: `Total Emissions!`,
   sidebar_title: `Sources of Carbon in South Africa_test`,
   introduction_title: `<h2>General Information</h2>`,
   introduction_text: `<h3>Introduction</h3>
