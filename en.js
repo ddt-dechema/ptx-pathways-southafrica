@@ -1,8 +1,8 @@
 var translations_en = {
   
   table_emissions_title: `Total Emissions`,
-  sidebar_title: `Sources of Carbon in Argentina`,
-  introduction_title: `<h2>General TESTESTSETSET</h2>`,
+  sidebar_title: `Sources of Carbon in South Africa`,
+  introduction_title: `<h2>General Information</h2>`,
   introduction_text: `<h3>Introduction</h3>
   CO<sub>2</sub> is a greenhouse gas produced in many cases as an industrial byproduct, which is currently emitted into the atmosphere in most of the production sites. However, this gas has the potential to be used as raw material for Power-to-X (PtX) products containing carbon in their molecules, such as e-methanol or synthetic fuels (e-fuels). The competitiveness of these products can be highly affected by the availability and quality of the CO<sub>2</sub> source that will be used.
     This map aims to identify carbon sources (in the form of CO<sub>2</sub>) in Argentina to collaborate in the search for opportunities to develop PtX projects in the country. 
@@ -39,8 +39,8 @@ var translations_en = {
   scale_title: `Emissions in <span title="kilo or 1&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">kt</span>/year`,
   data_title: `Data and sources`,
   methods: `<h2>Sources and Methodology</h2>
-  This map is based on estimates, public and industry-specific information sources, and information acquired from consultations with some associations, as explained below:
-  <b>Aluminum</b>
+  This map is based on estimates, public and industry-specific information sources, and information acquired from consultations with some associations, as explained below:<br>
+  <b>Aluinium</b>
   <br>Estimated value with the production capacity reported in the website of Aluar [1], a production factor of 83% (five-year average of production relative to capacity) [1] and an emission factor of 1.6 tonnes of CO2 per tonne of alluminium [2].
   <br><b>Steel</b>
   <br>Production capacity data obtained from [3] and emission factors obtained from the sustainability reports of steel producing companies [4]–[8].

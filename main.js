@@ -560,8 +560,8 @@ function showMap(reload, language, zoomlevel, center, style) {
         }
     })
     
-    // Argentina center
-    let position = [-38.45155, -63.5988853];
+    // South Africa center
+    let position = [-31.977479, 26.236878];
     let zoom = 5;
     
     if (zoomlevel && center) {
@@ -574,8 +574,8 @@ function showMap(reload, language, zoomlevel, center, style) {
     // SET MAP BOUNDARIES 
     // dragging and panning of the map to other countries not possible
     bounds = new L.LatLngBounds(
-        new L.LatLng(13.721181, -33.134403), 
-        new L.LatLng(-58.777227, -96.623767)
+        new L.LatLng(-23.104350, 8.697310), 
+        new L.LatLng(-38.032825, 37.081656)
         );
     /* Set up the map with initial center and zoom level */
     map = L.map('map', {
