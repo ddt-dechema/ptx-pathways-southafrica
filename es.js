@@ -1,7 +1,7 @@
 var translations_es = {
   
   table_emissions_title: `Emisiones totales`,
-  sidebar_title: `Fuentes de Carbono en Argentina`,
+  sidebar_title: `Fuentes de Carbono en SA`,
   introduction_title: `<h2>Información general</h2>`,
   introduction_text: `<h3>Introducción</h3>
     El CO<sub>2</sub> es un gas de efecto invernadero producido en muchos casos como un subproducto industrial, el cual es actualmente emitido a la atmósfera en la mayoría de los procesos que lo producen. Sin embargo, este gas tiene el potencial de ser usado como materia prima para productos Power-to-X (PtX) que contienen carbono en sus moléculas, como es el caso del e-metanol o de los combustibles sintéticos (e-fuels).  La competitividad de estos productos puede estar altamente afectada por la disponibilidad y la calidad de la fuente de CO<sub>2</sub> que se utilizará.
