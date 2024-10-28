@@ -8,7 +8,7 @@ var translations_en = {
   <br>While the current carbon sources in South Africa are primarily derived from industrial point emissions, it is important to emphasize that, in the long term, the carbon needed for these applications should come from a non-fossil, closed carbon cycle to ensure carbon neutrality. Direct Air Capture (DAC) and biogenic point sources could help meet this requirement, provided sustainability criteria are considered.<br>`,
   project: `<h3>The International Power-to-X Hub</h3> The International PtX Hub is implemented by the Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH on behalf of the German Federal Ministry for Economic Affairs and Climate Action (BMWK). Financed by the International Climate Initiative (Internationale Klimaschutzinitiative, IKI), the International PtX Hub is a contribution to the German National Hydrogen Strategy of 2020 and represents one of the four pillars of the BMUV’s PtX action programme initiated in 2019.
     In South Africa, the political partner is the Department of Trade Industry and Competition (DTIC). The implementing partners are the Energy Centre of the Council for Scientific and Industrial Research (CSIR), Agora Energiewende and DECHEMA e.V.`,
-  language_picker: `<h3>Cambiar el idioma</h3>`,
+  
   languge_switch_link: `Si desea enlazar al mapa en un idioma específico, utilice el link 
   <a id="link_english">inglés</a>
   o <a id="link_spanish">español</a>
