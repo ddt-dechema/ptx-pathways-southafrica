@@ -11,7 +11,7 @@ var translations_en = {
   
   languge_switch_link: `Si desea enlazar al mapa en un idioma específico, utilice el link 
   <a id="link_english">inglés</a>
-  o <a id="link_spanish">español</a>
+ 
   `,
   sidebar_header_filters: `Filters`,
   filter_title: `Different categories/sources of carbon`,
