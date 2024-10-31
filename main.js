@@ -22,6 +22,7 @@ let baseColors = {
         "Aluminium": "rgb(113, 184, 210, 1)",
         "Steel": "rgb(113, 184, 210, 0.8)",
         "Cement": "rgb(113, 184, 210, 0.6)",
+        "Ferroalloy": "rgb(113, 184, 210, 0.6)",
         
         "Pulp and Paper": "rgb(209, 146, 198, 1)",
         
@@ -145,7 +146,7 @@ var scale = document.getElementById("scale")
 //
 ////////////////////////////////////////////////////
 var geojsonLayer; // Declare a variable to hold the GeoJSON layer
-// var aluminiumLayer, steelLayer, cementLayer, paperLayer, thermalLayer, refineryLayer, biogasLayer, bioethanolLayer, ammoniaLayer, methanolLayer, etilenoLayer;   // Add more variables for other layers
+// var aluminiumLayer, steelLayer, cementLayer, paperLayer, thermalLayer, refineryLayer, biogasLayer, bioethanolLayer, ammoniaLayer, methanolLayer, etilenoLayer, ferroalloyLayer;   // Add more variables for other layers
 var layer;
 // Declare variables for GeoJSON layers
 var layers = {};
@@ -169,6 +170,7 @@ var allLayers = [
         { name_en: 'Biogas Power Plant', name_es: 'Termoeléctricas Biogás', name: 'Biogas Power Plant', id: 'button-biogas', industry: 'biogenic'},
         { name_en: 'Bioethanol', name_es: 'Bioetanol', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
         { name_en: 'Biomass Power Plant', name_es: 'Termoeléctricas Biomasa', name: 'Biomass Power Plant', id: 'button-biomass', industry: 'biogenic'}
+        { name_en: 'Ferroalloy', name_es: 'Ferroaleación', name: 'Ferroalloy', id: 'button-ferroalloy', industry: 'industrial'}
     ];
 
 // Loop through the button data and create buttons
@@ -291,6 +293,7 @@ function updateContent(language) {
         $('.button-biogas').html(translations.button_biogas);
         $('.button-paper').html(translations.button_paper);
         $('.button-biomass').html(translations.button_biomass);
+        $('.button-ferroalloy').html(translations.button_ferroalloy);
 
         $('#table_header_industry_type').html(translations.table_header_industry_type);
         $('#table_header_total_emissions').html(translations.table_header_total_emissions);
