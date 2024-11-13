@@ -561,7 +561,7 @@ function showMap(reload, language, zoomlevel, center, style) {
     })
     
     // South Africa center
-    let position = [-39.44408245739007,-67.4808489902238];
+    let position = [-31.977479, 26.236878];
     let zoom = 5;
     
     if (zoomlevel && center) {
