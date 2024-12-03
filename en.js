@@ -15,8 +15,8 @@ var translations_en = {
   `,
   sidebar_header_filters: `Filters`,
   filter_title: `Different Categories/Sources of Carbon`,
-  filter_text: `Industrial carbon dioxide sources in South Africa are largely dominated by coal-fired power stations, which account for approximately 70% of total industrial CO<sub>2</sub> emissions. Other significant sources include the petrochemical industry, which generates emissions through the production of synthetic fuels and a wide range of chemical products. The metal industry, encompassing steel, ferroalloy, and aluminum production, along with the cement sector, is also a significant contributor to South Africa’s industrial carbon emissions. <br>
-  A distinction is made between industrial <span class="rect dot_industrial"></span> and biogenic sources <span class="rect dot_biogenic"></span>. 
+  filter_text: `The industrial and energy sectors are the leading sources of carbon dioxide emissions in South Africa, primarily due to coal combustion and carbon-intensive industrial activities. Within the energy sector, coal-fired power stations are the dominant contributors, responsible for approximately 70% of the country’s total CO₂ emission. Other significant sources include the petrochemical industry, which generates emissions through the production of synthetic fuels and a wide range of chemical products. The metal industry, encompassing steel, ferroalloy, and aluminum production, along with the cement sector, is also a significant contributor to South Africa’s industrial carbon emissions.<br>
+   <br>A distinction is made between industrial <span class="rect dot_industrial"></span> and biogenic sources <span class="rect dot_biogenic"></span>. 
   Industrial sources include the manufacture of chemical products (ammonia, ethylene, methanol) <span class="dot dot_chemicals"></span>, 
   metals (aluminum and steel) and cement <span class="dot dot_metals"></span>, 
   Pulp and paper <span class="dot dot_paper"></span>,
