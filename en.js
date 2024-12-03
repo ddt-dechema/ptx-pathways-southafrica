@@ -15,13 +15,13 @@ var translations_en = {
   `,
   sidebar_header_filters: `Filters`,
   filter_title: `Different Categories/Sources of Carbon`,
-  filter_text: `The industrial and energy sectors are the leading sources of carbon dioxide emissions in South Africa, primarily due to coal combustion and carbon-intensive industrial activities. Within the energy sector, coal-fired power stations are the dominant contributors, responsible for approximately 70% of the country’s total CO₂ emission. Other significant sources include the petrochemical industry, which generates emissions through the production of synthetic fuels and a wide range of chemical products. The metal industry, encompassing steel, ferroalloy, and aluminum production, along with the cement sector, is also a significant contributor to South Africa’s industrial carbon emissions.<br>
+  filter_text: `The industrial and energy sectors are the leading sources of carbon dioxide emissions in South Africa, primarily due to coal combustion and carbon-intensive industrial activities. Within the energy sector, coal-fired power stations are the dominant contributors, responsible for approximately 70% of the country’s total CO₂ emissions. Other significant sources include the petrochemical industry, which generates emissions through the production of synthetic fuels and a wide range of chemical products. The metal industry, encompassing steel, ferroalloy, and aluminum production, along with the cement sector, is also a significant contributor to South Africa’s industrial carbon release.<br>
    <br>[A distinction is made between industrial <span class="rect dot_industrial"></span> and biogenic sources <span class="rect dot_biogenic"></span>. 
   Industrial sources include the manufacture of chemical products (ammonia, ethylene, methanol) <span class="dot dot_chemicals"></span>, 
   metals (aluminum and steel) and cement <span class="dot dot_metals"></span>, 
   Pulp and paper <span class="dot dot_paper"></span>,
   and others, including refineries and fossil thermoelectric power plants <span class="dot dot_others"></span>. <br>
-  Biogenic sources include biogas, biomass and bioethanol production.<span class="dot dot_bio"></span>`],
+  Biogenic sources include biogas, biomass and bioethanol production.<span class="dot dot_bio"></span>]`,
   manual_filter_title: `Or filter manually`,
   emission_type: `Type of CO<sub>2</sub> emissions:`,
   industrial_button: `industrial/energy sources`,
