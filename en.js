@@ -22,7 +22,7 @@ var translations_en = {
   Pulp and paper <span class="dot dot_paper"></span>,
   and others, including refineries and fossil thermoelectric power plants <span class="dot dot_others"></span>. <br>
   Biogenic sources include biogas, biomass and bioethanol production.<span class="dot dot_bio"></span>]`,
-  manual_filter_title: `Filter manually`,
+  manual_filter_title: `Filter Manually`,
   emission_type: `Type of CO<sub>2</sub> emissions:`,
   industrial_button: `industrial/energy sources`,
   biogenic_button: `biogenic sources`,
@@ -76,7 +76,7 @@ var translations_en = {
   <br>[22] Samancor Chrome. “Samancor Operations Overview.” Accessed: Dec. 2, 2024. [Online]. Available:  <a href="https://samancorcr.com/operations-overview/" target="_blank">https://samancorcr.com/operations-overview/</a>
   <br>[23] South 32. “Sustainable Development Report 2024.” Accessed: Dec. 2, 2024. [Online]. Available:  <a href="https://www.south32.net/docs/default-source/annual-reporting-suite/2024/sustainable-development-report-2024.pdf?sfvrsn=ddc11e46_1" target="_blank">https://www.south32.net/docs/default-source/annual-reporting-suite/2024/sustainable-development-report-2024.pdf?sfvrsn=ddc11e46_1</a>
   `,
-  download_text: `<br>Download the data`,
+  download_text: `<br>Download the Data`,
   download_csv: `Download the sources of CO₂ in Argentina (csv)`,
   download_geojson: `Download the sources of CO₂ in Argentina (geojson)`,
 
