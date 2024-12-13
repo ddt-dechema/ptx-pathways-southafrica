@@ -14,12 +14,12 @@ let baseColors = {
         "industrial": "rgb(84, 114, 155)",
         "biogenic": "rgb(57, 137, 126)" 
     },
-    emissionTypeColors_D = {
-        "Ammonia": "rgb(241, 219, 38, 1)",
+    emissionTypeColors_D = { // in total: 6
+        "Coal fired power station": "rgb(241, 219, 38, 1)",
         "Ethylene": "rgb(241, 219, 38, 0.8)",
         "Methanol": "rgb(241, 219, 38, 0.6)",
         
-        "Aluminium": "rgb(113, 184, 210, 1)",
+        "Mineral": "rgb(113, 184, 210, 1)",
         "Steel": "rgb(113, 184, 210, 0.8)",
         "Cement": "rgb(113, 184, 210, 0.6)",
         
@@ -103,7 +103,7 @@ var table_selected = document.getElementById('table-selected-emissions');
 // Get a reference to the container element
 const buttonContainer = document.getElementById('button-container');
 // Define a GeoJSON URL
-var geojsonURL = 'argentina_emissions.geojson';
+var geojsonURL = 'southafrica_emissions.geojson';
 
 const content_sidebar = document.getElementById('sidebar');
 content_sidebar.style.backgroundColor = baseColors.ptx_first; // Set the background color to the first color in the palette (Red)
@@ -157,10 +157,10 @@ var counts = [];
 // 12 in total
 // if industries are renamed, also rename in en.js and es.js!
 var allLayers = [
-        { name_en: 'Ammonia', name_es: 'Amoniaco', name: 'Ammonia', id: 'button-ammonia', industry: 'industrial'},
+        { name_en: 'Coal fired power station', name_es: 'Amoniaco', name: 'Coal fired power station', id: 'button-coal', industry: 'industrial'},
         { name_en: 'Ethylene', name_es: 'Etileno', name: 'Ethylene', id: 'button-ethylene', industry: 'industrial'},
         { name_en: 'Methanol', name_es: 'Metanol', name: 'Methanol', id: 'button-methanol', industry: 'industrial'},
-        { name_en: 'Aluminium', name_es: 'Aluminio', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
+        { name_en: 'Mineral', name_es: 'Mineral', name: 'Mineral', id: 'button-mineral', industry: 'industrial'},
         { name_en: 'Steel', name_es: 'Acero', name: 'Steel', id: 'button-Steel', industry: 'industrial'},
         { name_en: 'Cement', name_es: 'Cemento', name: 'Cement', id: 'button-cement', industry: 'industrial'},
         { name_en: 'Pulp and Paper', name_es: 'Celulosa y Papel', name: 'Pulp and Paper', id: 'button-paper', industry: 'industrial'},
@@ -279,12 +279,12 @@ function updateContent(language) {
         // update button and table texts, which are generated in main.js
         // here, classes are used, because the button texts and the rows in the table, where total emissions are calculated
         // are updated to the same text.
-        $('.button-Aluminium').html(translations.button_Aluminium);
+        $('.button-mineral').html(translations.button_mineral);
         $('.button-Steel').html(translations.button_Steel);
         $('.button-cement').html(translations.button_cement);
         $('.button-refinery').html(translations.button_refinery);
         $('.button-thermal').html(translations.button_thermal);
-        $('.button-ammonia').html(translations.button_ammonia);
+        $('.button-coal').html(translations.button_coal);
         $('.button-etileno').html(translations.button_etileno);
         $('.button-methanol').html(translations.button_methanol);
         $('.button-bioethanol').html(translations.button_bioethanol);
