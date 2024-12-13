@@ -22,7 +22,7 @@ var translations_en = {
   Pulp and paper <span class="dot dot_paper"></span>,
   and others, including refineries and fossil thermoelectric power plants <span class="dot dot_others"></span>. <br>
   Biogenic sources include biogas, biomass and bioethanol production.<span class="dot dot_bio"></span>]`,
-  manual_filter_title: `Or filter manually`,
+  manual_filter_title: `Filter manually`,
   emission_type: `Type of CO<sub>2</sub> emissions:`,
   industrial_button: `industrial/energy sources`,
   biogenic_button: `biogenic sources`,
@@ -38,7 +38,7 @@ var translations_en = {
   scale_title: `Emissions in <span title="kilo or 1&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">kt</span>/year`,
   data_title: `Data and sources`,
   methods: `<h2>Sources and Methodology</h2>
-  This map is based on estimates, public and industry-specific information sources, and information acquired from consultations with some associations, as explained below:<br>
+  This map is based on information from South Africa’s Department of Forestry, Fisheries and the Environment, as presented in the 9th National Greenhouse Gas Inventory Report for the Republic of South Africa [1], and the published study Carbon Sources for PtX Products and Synthetic Fuels in South Africa [2]. Using this information, along with further estimates derived from public sources and industry-specific information, CO₂ emissions allocations were determined as detailed below.<br>
   <b>Aluinium</b>
   <br>Estimated value with the production capacity reported in the website of Aluar [1], a production factor of 83% (five-year average of production relative to capacity) [1] and an emission factor of 1.6 tonnes of CO2 per tonne of alluminium [2].
   <br><b>Steel</b>
