@@ -43,8 +43,8 @@ var translations_en = {
   <br>The total energy production values for each power station were obtained from Eskom’s Atmospheric Emission License (AEL) reports [3]. Using Eskom’s total annual CO₂ emissions [4] and total electricity produced, an emission factor of 1.1 was estimated. Based on this factor and the specific electricity production at each power station, the CO₂ emission allocation at each generation point was calculated.
   <br><b>Petrochemical</b>
   <br>Major CO₂ emitters in South Africa’s petrochemical industry are associated with Sasol's facilities, with emission values sourced from Sasol’s Climate Change Report [5]. 
-  <br><b>Cement</b>
-  <br>Estimated value with the clinker production capacity [9], a clinker factor of 0.681 and an average emission factor of 0.519 tonnes of CO2 per tonnes of cement [10]. 
+  <br><b>Iron & Steel</b>
+  <br>Based on the melting processes used for steel production at each location [6], emission factors of 2.5, 0.6, and 0.4 (for blast, electric arc, and induction furnaces, respectively) were considered. These factors were gathered from steel industry reports [7, 8] and additional literature sources [9, 10]. Assuming an 80% capacity factor for South Africa’s steel industry [6], and considering the total installed capacity at various iron and steel manufacturers [11-17], CO₂ emission values were allocated.  
   <br><b>Pulp and Paper</b>
   <br>Annual production capacity data and utilization factor obtained from the 2020 Survey of the pulp and paper industry [11] and an average emission factor of 2.5 tonnes of CO2 per tonne of pulp. Estimation done by [12].
   <br><b>Fossil thermal power plant</b>
