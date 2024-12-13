@@ -51,7 +51,7 @@ var translations_en = {
   <br>CO₂ emissions from South Africa’s mineral sector are predominantly attributed to the cement industry. Emission values from various producers were sourced from the study Carbon Sources for PtX Products and Synthetic Fuels in South Africa [2].<br> 
   <br><b>Aluminum</b>
   <br>CO₂ emissions associated with aluminum production in South Africa are primarily attributed to Hillside Aluminium. Emission values were sourced from the company’s sustainability report [23].<br>`,
-  sources: `<h3>Literature</h3>
+  sources: `<br><h3>Literature</h3>
   [1] Department of Forestry, Fisheries and the Environment. “National GHG Inventory Report.” Accessed: Dec. 2, 2024. [Online]. Available:  <a href="https://www.dffe.gov.za/sites/default/files/legislations/unfccc_greenhousegasinventoryreport9_g50607gon4772.pdf"_blank">https://www.dffe.gov.za/sites/default/files/legislations/unfccc_greenhousegasinventoryreport9_g50607gon4772.pdf</a>
   <br>[2]	Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH. “Carbon Sources for PtX Products and Synthetic Fuels in South Africa.” Accessed: Dec. 2, 2024. [Online]. Available:  <a href="https://ptx-hub.org/wp-content/uploads/2024/03/International-PtX-Hub_2z2403_Carbon-Sources-in-South-Africa.pdf">https://ptx-hub.org/wp-content/uploads/2024/03/International-PtX-Hub_2z2403_Carbon-Sources-in-South-Africa.pdf</a>
   <br>[3]	Esko. “Atmospheric Emission License (AEL) reports.” Accessed: Dec. 2, 2024. [Online]. Available: <a href="https://www.eskom.co.za/dataportal/emissions/ael/" target="_blank">https://www.eskom.co.za/dataportal/emissions/ael/</a>
