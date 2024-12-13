@@ -1,7 +1,7 @@
 var translations_en = {
   
   table_emissions_title: `Total Emissions`,
-  sidebar_title: `SSSources of Carbon in South Africa`,
+  sidebar_title: `Sources of Carbon in South Africa`,
   introduction_title: `<h2>General Information</h2>`,
   introduction_text: `<h3>Introduction</h3>
   Carbon dioxide (CO<sub>2</sub>), a greenhouse gas often produced as an industrial byproduct, is currently released into the atmosphere at most production sites. However, it has significant potential as a raw material for carbon-based Power-to-X (PtX) products, such as e-methanol and synthetic fuels (e-fuels). The competitiveness of these products depends largely on the availability and quality of the CO<sub>2</sub> supply, making it essential to identify reliable sources. This map highlights the major CO<sub>2</sub> emitters across South Africa, providing essential data on the location, type, and scale of key industrial point sources. This information is essential for supporting the development of PtX projects in the country.<br>
