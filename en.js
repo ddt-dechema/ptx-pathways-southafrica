@@ -102,11 +102,11 @@ var translations_en = {
   This Map of CO<sub>2</sub> sources in Argentina is published by the PtX Hub. The PtX Hub is commissioned by the German Federal Government. It is mainly funded by the International Climate Initiative (IKI) and implemented by GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH). The opinions and recommendations expressed do not necessarily reflect the positions of the commissioning institutions or the implementing agency.`,
   // ...
   button_Aluminium: `Aluminium`,
-  button_Steel: `Steel`,
+  button_Mineral: `Mineral`,
   button_cement: `Cement`,
   button_refinery: `Refinery`,
   button_thermal: `Fossil Thermal Power Plant`,
-  button_ammonia: `Ammonia`,
+  button_coal: `Coal fired power station`,
   button_ethylene: `Ethylene`,
   button_methanol: `Methanol`,
   button_bioethanol: `Bioethanol`,
