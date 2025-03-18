@@ -400,7 +400,10 @@ hr {
 
 .button-ammonia-outline,
 .button-ethylene-outline,
-.button-methanol-outline {
+.button-methanol-outline,
+.button-petro-outline,
+.button-coal-outline,
+.button-cement-outline {
   --bs-btn-color:var(--ptx-chemicals);
   --bs-btn-border-color:var(--ptx-chemicals);
   /* --bs-btn-hover-color:black; */
@@ -419,7 +422,7 @@ hr {
 
 .button-Aluminium-outline,
 .button-Steel-outline,
-.button-cement-outline {
+.button-ferro-outline {
   --bs-btn-color:var(--ptx-metals);
   --bs-btn-border-color:var(--ptx-metals);
   /* --bs-btn-hover-color:#fff;
@@ -436,7 +439,8 @@ hr {
   --bs-gradient:none
 }
 
-.button-paper-outline {
+.button-paper-outline, 
+.button-sugar-outline {
   --bs-btn-color:var(--ptx-paper);
   --bs-btn-border-color:var(--ptx-paper);
   /* --bs-btn-hover-color:#fff;
