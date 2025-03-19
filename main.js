@@ -566,8 +566,8 @@ if (zoomlevel && center) {
     zoom = zoomlevel;
     position = center;
 }
-// SET DEFAULT LANGUAGE OF THE NAMES OF LOCATIONS ON THE MAP TO SPANISH
-maptilersdk.config.primaryLanguage = maptilersdk.Language.SPANISH;
+// SET DEFAULT LANGUAGE OF THE NAMES OF LOCATIONS ON THE MAP TO ENGLISH
+maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
 
 // SET MAP BOUNDARIES 
 // dragging and panning of the map to other countries not possible
