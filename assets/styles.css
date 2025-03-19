@@ -286,7 +286,7 @@ body .sidebar-tabs>li.active, .sidebar-tabs>ul>li.active {
 
   
 /* Size legend styling */
-#scale {
+/*#scale {
   position: absolute;
   background-color: white;
   border-radius: 5px;
