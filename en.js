@@ -16,18 +16,13 @@ var translations_en = {
   `,
   sidebar_header_filters: `Filters`,
   filter_title: `Different Categories/Sources of Carbon`,
-  filter_text: `A distinction is made between industrial  <span class="rect dot_industrial"></span> and biogenic carbon sources <span class="rect dot_biogenic"></span>. Industrial sources are the largest contributors to carbon emissions in South Africa, due to their reliance on fossil-based feedstocks and energy-intensive production processes. Within this, the energy sector is the primary contributor, with coal-fired power stations responsible for approximately 70% of the country’s total CO<sub>2</sub> industrial emissions. Other significant fossil carbon sources include the petrochemical industry, which generates emissions through the production of synthetic fuels and chemicals like ammonia, methanol, and ethylene, among others. Aditionally, the metal industry, which includes steel, ferroalloy, and aluminum production, along with the cement sector, also plays a substantial role in South Africa’s fossil carbon emissions.<br>
-  <br>Biogenic CO<sub>2</sub> emissions in South Africa arise from industrial activities using biomass as a power source or feedstock. Notable examples include the pulp and paper industry and the sugar industry, where the potential for biogenic carbon accounts for 70-80% and 80-90% of their total CO<sub>2</sub> emissions, respectively. Additionally, purely biogenic emissions result from activities such as bioethanol production, as well as biogas and biomass power plants.<br>
-  <br>[A distinction is made between industrial <span class="rect dot_industrial"></span> and biogenic sources <span class="rect dot_biogenic"></span>. 
-  Industrial sources include the manufacture of chemical products (ammonia, ethylene, methanol) <span class="dot dot_chemicals"></span>, 
-  metals (aluminum and steel) and cement <span class="dot dot_metals"></span>, 
-  Pulp and paper <span class="dot dot_paper"></span>,
-  and others, including refineries and fossil thermoelectric power plants <span class="dot dot_others"></span>. <br>
-  Biogenic sources include biogas, biomass and bioethanol production.<span class="dot dot_bio"></span>]`,
+  filter_text: `A distinction is made between industrial  <span class="rect dot_industrial"></span> and biogenic carbon sources <span class="rect dot_biogenic"></span>. Industrial sources are the largest contributors to carbon emissions in South Africa, due to their reliance on fossil-based feedstocks and energy-intensive production processes. Within this, the energy sector is the primary contributor, with coal-fired power stations <span class="dot dot_coal"></span> responsible for approximately 70% of the country’s total CO<sub>2</sub> industrial emissions. Other significant fossil carbon sources include the petrochemical industry <span class="dot dot_petro"></span>, which generates emissions through the production of synthetic fuels and chemicals like ammonia, methanol, and ethylene, among others. Aditionally, the metal industry <span class="dot dot_metals"></span>, which includes steel, ferroalloy, and aluminum production, along with the cement sector <span class="dot dot_cement"></span>, also plays a substantial role in South Africa’s fossil carbon emissions.<br>
+  <br>Biogenic CO<sub>2</sub> emissions in South Africa arise from industrial activities using biomass as a power source or feedstock. Notable examples include the pulp and paper industry <span class="dot dot_paper"></span> and the sugar industry <span class="dot dot_sugar"></span>, where the potential for biogenic carbon accounts for 70-80% and 80-90% of their total CO<sub>2</sub> emissions, respectively. Additionally, purely biogenic emissions result from activities such as bioethanol production <span class="dot dot_bioethanol"></span>, as well as biogas and biomass power plants <span class="dot dot_biopower"></span>.<br>
+  `,
   manual_filter_title: `Filter Manually`,
   emission_type: `Type of CO<sub>2</sub> emissions:`,
-  industrial_button: `industrial/energy sources`,
-  biogenic_button: `biogenic sources`,
+  industrial_button: `Industrial sources`,
+  biogenic_button: `Biogenic sources`,
   only_selected_plants: `Only selected plant types:`,
   deselect_all_button: `Deselect all`,
   

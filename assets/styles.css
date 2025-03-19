@@ -6,11 +6,14 @@
     --ptx-industrial: rgb(84, 114, 155);
     --ptx-biogenic: rgb(57, 137, 126);
 
-    --ptx-chemicals: rgb(241, 219, 38, 1);
-    --ptx-metals: rgb(113, 184, 210, 1);
-    --ptx-paper: rgb(209, 146, 198, 1);
-    --ptx-others: rgb(164, 146, 220, 1);
-    --ptx-bio: rgb(143, 196, 146, 1);
+    --ptx-coal: rgb(164, 146, 210, 1);
+    --ptx-petro: rgb(209, 146, 198, 1);
+    --ptx-metals: rgb(87, 171, 210, 1);
+    --ptx-cement: rgb(0, 182, 157, 0.8);
+    --ptx-bioethanol: rgb(130, 224, 135, 1);
+    --ptx-biopower: rgb(143,196,146, 1);
+    --ptx-paper: rgb(255, 187, 0, 1);
+    --ptx-sugar: rgb(241, 219, 38, 0.6);
     --ptx-background-color: rgb(240,245,240);
     --ptx-text-color: rgb(88,88,88);
   }
@@ -326,23 +329,30 @@ body .sidebar-tabs>li.active, .sidebar-tabs>ul>li.active {
   background-color: var(--ptx-biogenic);
 }
 
-.dot_chemicals {
-  background-color: var(--ptx-chemicals);
+.dot_coal {
+  background-color: var(--ptx-coal);
 }
 .dot_metals {
   background-color: var(--ptx-metals);
 }
+.dot_petro {
+  background-color: var(--ptx-petro);
+}
+.dot_cement {
+  background-color: var(--ptx-cement);
+}
+.dot_bioethanol {
+  background-color: var(--ptx-bioethanol);
+}
+.dot_biopower {
+  background-color: var(--ptx-biopower);
+}
 .dot_paper {
   background-color: var(--ptx-paper);
 }
-.dot_others {
-  background-color: var(--ptx-others);
+.dot_sugar {
+  background-color: var(--ptx-sugar);
 }
-.dot_bio {
-  background-color: var(--ptx-bio);
-}
-
-
 .badge_ammonia {
   background-color: var(--ptx-chemicals);
 }
