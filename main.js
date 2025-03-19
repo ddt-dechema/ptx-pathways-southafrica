@@ -15,23 +15,21 @@ emissionColors_D = {
     "biogenic": "rgb(57, 137, 126)" 
 },
 emissionTypeColors_D = { // in total: 6
-    "Coal fired power station": "rgb(241, 219, 38, 1)",
-    "Petrochemical": "rgb(241, 219, 38, 0.8)",
-    "Cement": "rgb(241, 219, 38, 0.6)",
+    "Coal fired power station": "rgb(164, 146, 220, 1)",
+    "Petrochemical": "rgb(209, 146, 198, 1)",
+    "Cement": "rgb(0, 182, 157, 0.8)",
     
-    "Iron & steel": "rgb(113, 184, 210, 1)",
-    "Ferroalloy": "rgb(113, 184, 210, 0.8)",
-    "Aluminium": "rgb(113, 184, 210, 0.6)",
+    "Iron & steel": "rgb(87, 171, 210, 1)",
+    "Ferroalloy": "rgb(87, 171, 210, 0.7)",
+    "Aluminium": "rgb(87, 171, 210, 0.5)",
     
-    "Pulp & paper": "rgb(209, 146, 198, 1)",
+    "Pulp & paper": "rgb(255, 187, 0, 1)",
+    "Sugar": "rgb(241, 219, 38, 0.6)",
     
-    "Sugar": "rgb(164, 146, 220, 1)",
-    
-    "Bioethanol": "rgb(143, 196, 146, 1)",
-    
+    "Bioethanol": "rgb(130, 224, 135, 1)",
     "Biogas power plant": "rgb(143, 196, 146, 1)",
-    "Biomass power plant": "rgb(143, 196, 146, 0.8)",
-    "Biomass Power Plant": "rgb(143, 196, 146, 0.6)"
+    "Biomass power plant": "rgb(143, 196, 146, 0.6)",
+    
 }
 
 ////////////////////////////////////////////////////
@@ -160,10 +158,10 @@ var counts = [];
 var allLayers = [
     { name_en: 'Coal fired power station', name_es: 'Amoniaco', name: 'Coal fired power station', id: 'button-coal', industry: 'industrial'},
     { name_en: 'Petrochemical', name_es: 'Etileno', name: 'Petrochemical', id: 'button-petro', industry: 'industrial'},
-    { name_en: 'Cement', name_es: 'Cement', name: 'Cement', id: 'button-cement', industry: 'industrial'},
     { name_en: 'Iron & steel', name_es: 'Mineral', name: 'Iron & steel', id: 'button-Steel', industry: 'industrial'},
     { name_en: 'Ferroalloy', name_es: 'Acero', name: 'Ferroalloy', id: 'button-ferro', industry: 'industrial'},
     { name_en: 'Aluminium', name_es: 'Cemento', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
+    { name_en: 'Cement', name_es: 'Cement', name: 'Cement', id: 'button-cement', industry: 'industrial'},
     { name_en: 'Pulp & paper', name_es: 'Celulosa y Papel', name: 'Pulp & paper', id: 'button-paper', industry: 'biogenic'},
     { name_en: 'Sugar', name_es: 'Refinerías', name: 'Sugar', id: 'button-sugar', industry: 'biogenic'},
     { name_en: 'Bioethanol', name_es: 'Termoeléctricas Fuentes Fósiles', name: 'Bioethanol', id: 'button-bioethanol', industry: 'biogenic'},
@@ -652,23 +650,23 @@ formatSI_own = format_own.format(',.0f');
 
 /* create scale for the index.html */
 let createScale = (sliderValue) => {
-var height = 100*sliderValue;
-var width = 150*sliderValue;
-var svg = d3.select("#scale")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
-// The scale you use for bubble size
-// if maxRadius is not set (because slider was not used yet)
-// use maxEmissions of Argentina
-
-//reset the legend
-scale.removeChild(scale.children[1]);
-
-var size = d3.scaleSqrt()
-    .domain([0, maxRadius_kt]) // What's in the data, min-max
-    .range([0, 50*sliderValue]) // Size in pixel
-;
+    var height = 100*sliderValue;
+    var width = 150*sliderValue;
+    var svg = d3.select("#scale")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+    // The scale you use for bubble size
+    // if maxRadius is not set (because slider was not used yet)
+    // use maxEmissions of Argentina
+    
+    //reset the legend
+    scale.removeChild(scale.children[1]);
+    
+    var size = d3.scaleSqrt()
+        .domain([0, maxRadius_kt]) // What's in the data, min-max
+        .range([0, 50*sliderValue]) // Size in pixel
+    ;
 // Add legend: circles
 legend_valueone = format_nodecimal(maxRadius_kt/100);
 legend_valuetwo = format_nodecimal(maxRadius_kt/2.5);
@@ -697,6 +695,7 @@ svg
     .attr("stroke", "black");
 
 // Add legend: segments
+
 svg
     .selectAll("legend")
     .data(valuesToShow)
@@ -716,7 +715,7 @@ svg
     .style("stroke", "black")
     .style("stroke-width", "0.8")
     .style('stroke-dasharray', ('2,2'));
-
+    
 // Add legend: labels
 svg
     .selectAll("legend")
