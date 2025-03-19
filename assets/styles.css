@@ -440,7 +440,7 @@ hr {
   --bs-btn-disabled-border-color:var(--ptx-cement);
   --bs-gradient:none
 }
-.button-steel-outline,
+
 .button-ferro-outline {
   --bs-btn-color:var(--ptx-metals);
   --bs-btn-border-color:var(--ptx-metals);
@@ -458,8 +458,38 @@ hr {
   --bs-gradient:none
 }
 
-
-
+.button-steel-outline {
+  --bs-btn-color:var(--ptx-metals);
+  --bs-btn-border-color:var(--ptx-metals);
+  /* --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-metals); */
+  --bs-btn-hover-border-color:var(--ptx-metals);
+  --bs-btn-focus-shadow-rgb:13,110,253;
+  --bs-btn-active-color:#fff;
+  --bs-btn-active-bg:var(--ptx-metals);
+  --bs-btn-active-border-color:var(--ptx-metals);
+  --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color:var(--ptx-metals);
+  --bs-btn-disabled-bg:transparent;
+  --bs-btn-disabled-border-color:var(--ptx-metals);
+  --bs-gradient:none
+}
+.button-aluminium-outline {
+  --bs-btn-color:var(--ptx-metals);
+  --bs-btn-border-color:var(--ptx-metals);
+  /* --bs-btn-hover-color:#fff;
+  --bs-btn-hover-bg:var(--ptx-metals); */
+  --bs-btn-hover-border-color:var(--ptx-metals);
+  --bs-btn-focus-shadow-rgb:13,110,253;
+  --bs-btn-active-color:#fff;
+  --bs-btn-active-bg:var(--ptx-metals);
+  --bs-btn-active-border-color:var(--ptx-metals);
+  --bs-btn-active-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color:var(--ptx-metals);
+  --bs-btn-disabled-bg:transparent;
+  --bs-btn-disabled-border-color:var(--ptx-metals);
+  --bs-gradient:none
+}
 .button-paper-outline {
   --bs-btn-color:var(--ptx-paper);
   --bs-btn-border-color:var(--ptx-paper);

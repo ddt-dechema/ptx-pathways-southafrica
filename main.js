@@ -158,9 +158,9 @@ var counts = [];
 var allLayers = [
     { name_en: 'Coal fired power station', name_es: 'Amoniaco', name: 'Coal fired power station', id: 'button-coal', industry: 'industrial'},
     { name_en: 'Petrochemical', name_es: 'Etileno', name: 'Petrochemical', id: 'button-petro', industry: 'industrial'},
-    { name_en: 'Iron & steel', name_es: 'Mineral', name: 'Iron & steel', id: 'button-Steel', industry: 'industrial'},
+    { name_en: 'Iron & steel', name_es: 'Mineral', name: 'Iron & steel', id: 'button-steel', industry: 'industrial'},
     { name_en: 'Ferroalloy', name_es: 'Acero', name: 'Ferroalloy', id: 'button-ferro', industry: 'industrial'},
-    { name_en: 'Aluminium', name_es: 'Cemento', name: 'Aluminium', id: 'button-Aluminium', industry: 'industrial'},
+    { name_en: 'Aluminium', name_es: 'Cemento', name: 'Aluminium', id: 'button-aluminium', industry: 'industrial'},
     { name_en: 'Cement', name_es: 'Cement', name: 'Cement', id: 'button-cement', industry: 'industrial'},
     { name_en: 'Pulp & paper', name_es: 'Celulosa y Papel', name: 'Pulp & paper', id: 'button-paper', industry: 'biogenic'},
     { name_en: 'Sugar', name_es: 'Refinerías', name: 'Sugar', id: 'button-sugar', industry: 'biogenic'},

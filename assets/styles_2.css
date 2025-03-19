@@ -470,8 +470,7 @@ hr {
   --bs-gradient:none
 }
 
-.button-Aluminium-outline,
-.button-Steel-outline,
+
 .button-cement-outline {
   --bs-btn-color:var(--ptx-metals);
   --bs-btn-border-color:var(--ptx-metals);
