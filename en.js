@@ -41,13 +41,25 @@ var translations_en = {
   <br><b>Petrochemical</b>
   <br>Major CO₂ emitters in South Africa’s petrochemical industry are associated with Sasol's facilities, with emission values sourced from Sasol’s Climate Change Report [5].<br> 
   <br><b>Iron & Steel</b>
-  <br>Based on the melting processes used for steel production at each location [6], emission factors of 2.5, 0.6, and 0.4 (for blast, electric arc, and induction furnaces, respectively) were considered. These factors were gathered from steel industry reports [7, 8] and additional literature sources [9, 10]. Assuming an 80% capacity factor for South Africa’s steel industry [6], and considering the total installed capacity at various iron and steel manufacturers [11-17], CO₂ emission values were allocated.<br> 
+  <br>Based on the melting processes used for steel production at each location [6], emission factors of 2.5, 0.6, and 0.4 tonnes of CO2 per tonne of steel were considered (for blast, electric arc, and induction furnaces, respectively). These factors were gathered from steel industry reports [7, 8] and additional literature sources [9, 10]. Assuming an 80% capacity factor for South Africa’s steel industry [6], and considering the total installed capacity at various iron and steel manufacturers [11-17], CO₂ emission values were allocated.<br> 
   <br><b>Ferroalloy</b>
-  <br>Emission factors of 2.7 and 1.2 (for ferrochrome and silicomanganese/ferromanganese, respectively) were applied based on the type of ferroalloy produced at each location. These values were sourced from sustainability reports of key South African ferroalloy producers [18, 19]. Using a representative capacity factor of 70% for South Africa’s ferroalloy industry [18, 20], and accounting for the total installed capacity across various manufacturers [12, 21, 22], CO₂ emissions were allocated accordingly.<br>
-  <br><b>Mineral</b>
+  <br>Emission factors of 2.7 and 1.2 tonnes of CO2 per tonne of ferroalloy (ferrochrome and silicomanganese/ferromanganese, respectively) were applied based on the type of ferroalloy produced at each location. These values were sourced from sustainability reports of key South African ferroalloy producers [18, 19]. Using a representative capacity factor of 70% for South Africa’s ferroalloy industry [18, 20], and accounting for the total installed capacity across various manufacturers [12, 21, 22], CO₂ emissions were allocated accordingly.<br>
+  <br><b>Cement</b>
   <br>CO₂ emissions from South Africa’s mineral sector are predominantly attributed to the cement industry. Emission values from various producers were sourced from the study Carbon Sources for PtX Products and Synthetic Fuels in South Africa [2].<br> 
   <br><b>Aluminum</b>
-  <br>CO₂ emissions associated with aluminum production in South Africa are primarily attributed to Hillside Aluminium. Emission values were sourced from the company’s sustainability report [23].<br>`,
+  <br>CO₂ emissions associated with aluminum production in South Africa are primarily attributed to Hillside Aluminium. Emission values were sourced from the company’s sustainability report [23].<br>
+  <br><b>Pulp & paper</b>
+  <br>Total biogenic and fossil CO₂ emissions at Mondi’s and Sappi’s mills were obtained from their respective sustainability reports [24, 25]. Emissions at other mills were calculated using an average emission factor of 2.5 tonnes of CO₂ per tonne of paper, based on values reported in the literature and from other representative South African paper mills [24-27]. Considering this information and total production at each location [28], CO₂ emissions were allocated.<br>
+  <br><b>Sugar</b>
+  <br>Total CO₂ emissions from Illovo Sugar’s mills were obtained from the company’s sustainability report [29], considering the total capacity of each mill [29-31]. Emissions from other sugar mills were calculated based on total sugar production at each mill and the consumption of renewable (bagasse) and fossil (coal) fuels, with information sourced from the sustainability reports or official websites of the respective companies [32-36].<br>
+  <br><b>Bioethanol</b>
+  <br>Biogenic CO₂ emissions at Merebank Distillery were obtained from Illovo’s sustainability report [29]. Biogenic carbon emissions from other locations were calculated using an emission factor of 0.95 tonnes of CO₂ per tonne of ethanol and the respective ethanol production capacity at each facility [37, 38].<br> 
+  <br><b>Biogas power plant</b>
+  <br><br> 
+  <br><b>Biomass power plant</b>
+  <br><br> 
+
+  `,
   sources: `<br><h3>Literature</h3>
   [1] Department of Forestry, Fisheries and the Environment. “National GHG Inventory Report.” Accessed: Dec. 2, 2024. [Online]. Available:  <a href="https://www.dffe.gov.za/sites/default/files/legislations/unfccc_greenhousegasinventoryreport9_g50607gon4772.pdf"_blank">https://www.dffe.gov.za/sites/default/files/legislations/unfccc_greenhousegasinventoryreport9_g50607gon4772.pdf</a>
   <br>[2]	Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH. “Carbon Sources for PtX Products and Synthetic Fuels in South Africa.” Accessed: Dec. 2, 2024. [Online]. Available:  <a href="https://ptx-hub.org/wp-content/uploads/2024/03/International-PtX-Hub_2z2403_Carbon-Sources-in-South-Africa.pdf">https://ptx-hub.org/wp-content/uploads/2024/03/International-PtX-Hub_2z2403_Carbon-Sources-in-South-Africa.pdf</a>
