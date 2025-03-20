@@ -78,25 +78,18 @@ var translations_en = {
   download_geojson: `Download the sources of CO₂ in Argentina (geojson)`,
 
   disclaimer_title: `Data, licensing and privacy`,
-  map_programming: `<h3>Map development</h3>This map was developed by Dinh Du Tran (DECHEMA e.V.) with information collected by DECHEMA and GIZ Argentina.`,
+  map_programming: `<h3>Map development</h3>This map was developed by Dinh Du Tran (DECHEMA e.V.) with information collected by DECHEMA.`,
   contact: `<h3>Contact</h3>
-  Verónica Chorkulak<br>
-  <a href="mailto:veronica.chorkulak@giz.de">veronica.chorkulak@giz.de</a><br>
-  GIZ Argentina<br><br>
-  
-  Sebastián Murúa<br>
-  <a href="mailto:sebastian.murua@giz.de">sebastian.murua@giz.de</a><br>
-  GIZ Argentina<br><br>
-  
-  Luisa López<br>
-  <a href="mailto:luisa.lopez@dechema.de">luisa.lopez@dechema.de</a><br>
+   
+ Daniela Jurado Betancur<br>
+  <a href="mailto:daniela.juradoz@dechema.de">daniela.jurado@dechema.de</a><br>
   DECHEMA e.V.`,
-  disclaimer: `<h3>Disclaimer.</h3>The objective of this map is to provide information for research and for the development of PtX projects.\n
+  disclaimer: `<h3>Disclaimer</h3>The objective of this map is to provide information for research and for the development of PtX projects.\n
   Given that the publicly available information on CO<sub>2</sub> emissions is limited, in some cases it was necessary to estimate using an assumed emissions factor. Therefore, the emissions value presented may not be fully consistent with the actual value for some of the sources identified. \n
   In addition, this map is not complete and there may be sources that have not been identified. \n
   The consortium partners are not responsible for the interpretation and use of the information provided by this map.`,
-  legal: `<h3>Aviso legal</h3>
-  This Map of CO<sub>2</sub> sources in Argentina is published by the PtX Hub. The PtX Hub is commissioned by the German Federal Government. It is mainly funded by the International Climate Initiative (IKI) and implemented by GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH). The opinions and recommendations expressed do not necessarily reflect the positions of the commissioning institutions or the implementing agency.`,
+  legal: `<h3>Legal notice</h3>
+  This Map of CO<sub>2</sub> sources in South Africa is published by the PtX Hub. The PtX Hub is commissioned by the German Federal Government. It is mainly funded by the International Climate Initiative (IKI) and implemented by GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH). The opinions and recommendations expressed do not necessarily reflect the positions of the commissioning institutions or the implementing agency.`,
   // ...
   button_aluminium: `Aluminium`,
   button_steel: `Iron & steel`,
