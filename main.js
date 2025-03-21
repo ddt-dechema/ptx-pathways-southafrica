@@ -582,8 +582,8 @@ map = L.map('map', {
     scrollWheelZoom: false,
     zoomControl: false, // to put the zoom butons on the right
     minZoom: 5,     // damit man nicht zu weit rauszoomen kann
-    maxBounds: bounds,  // [    // damit man nicht nach links,rechts,oben, unten schieben kann; DISABLE PANNING
-    maxBoundsViscosity: 1    // damit gar kein panning außerhalb der bounds möglich ist. 
+    // maxBounds: bounds,  // [    // damit man nicht nach links,rechts,oben, unten schieben kann; DISABLE PANNING
+    // maxBoundsViscosity: 1    // damit gar kein panning außerhalb der bounds möglich ist. 
                             // 0: bouncing back; 1: no panning at all possible
 })
 
