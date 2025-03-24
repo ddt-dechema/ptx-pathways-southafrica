@@ -55,9 +55,9 @@ var translations_en = {
   <br><b>Bioethanol</b>
   <br>Biogenic CO₂ emissions at Merebank Distillery were obtained from Illovo’s sustainability report [29]. Biogenic carbon emissions from other locations were calculated using an emission factor of 0.95 tonnes of CO₂ per tonne of ethanol and the respective ethanol production capacity at each facility [37, 38].<br> 
   <br><b>Biogas power plant</b>
-  <br><br> 
+  <br>Information on the total biogas and electricity production at each location was obtained from the Southern African Biogas Industry Association [39]. Assuming a biogas composition of 60% methane and 40% carbon dioxide by volume [40], and using an emission factor of 50 kg of CO₂ per GJ produced by biogas combustion [41], the total CO₂ capacity at each location was calculated. <br> 
   <br><b>Biomass power plant</b>
-  <br><br> 
+  <br>Total electricity production at Ngodwana Biomass Power Station, along with its annual biomass consumption, was obtained from the literature [42]. Based on these values and assuming an emission factor of 86 kg of CO₂ per GJ produced by the combustion of wood residues [41], the total CO₂ emissions were calculated.<br> 
 
   `,
   sources: `<br><h3>Literature</h3>
