@@ -30,7 +30,7 @@ var translations_en = {
   statistics: `Total emissions in South Africa for selected filters:`,
   statistics_total: ` &nbsp;kilotonnes of CO<sub>2</sub> per years`,
   circle_title: `Change the circle size`,
-  circle_size: `Use this control if you want to change the scale (size) of the circles in order to see on the map the sites with lower emissions.`,
+  circle_size: `Use this control to adjust the scale (size) of the circles to better visualize sites with the lowest emissions on the map.`,
   zoom_factor: `Zoom factor`,
   scale_title: `Emissions in <span title="kilo or 1&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">kt</span>/year`,
   data_title: `Data and sources`,
