@@ -105,8 +105,8 @@ var translations_en = {
   <br>[42] GeaSphere, et al. “Ngodwana Biomass Energy Project – Case study”. Accessed: Mar. 13, 2025. [Online]. Available:  <a href="https://environmentalpaper.org/wp-content/uploads/2022/03/ngodwana-case-study.pdf " target="_blank">https://environmentalpaper.org/wp-content/uploads/2022/03/ngodwana-case-study.pdf </a>               
   `,
   download_text: `<br>Download the Data`,
-  download_csv: `Download the sources of CO₂ in Argentina (csv)`,
-  download_geojson: `Download the sources of CO₂ in Argentina (geojson)`,
+  download_csv: `Download the sources of CO₂ in South Africa (csv)`,
+  download_geojson: `Download the sources of CO₂ in South Africa (geojson)`,
 
   disclaimer_title: `Data, licensing and privacy`,
   map_programming: `<h3>Map development</h3>This map was developed by Dinh Du Tran (DECHEMA e.V.) with information collected by DECHEMA.`,
