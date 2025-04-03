@@ -17,7 +17,7 @@ var translations_en = {
   sidebar_header_filters: `Filters`,
   filter_title: `Different Categories/Sources of Carbon`,
   filter_text: `A distinction is made between industrial  <span class="rect dot_industrial"></span> and biogenic carbon sources <span class="rect dot_biogenic"></span>. Industrial sources are the largest contributors to carbon emissions in South Africa, due to their reliance on fossil-based feedstocks. Within this, the energy sector is the primary contributor, with coal-fired power stations <span class="dot dot_coal"></span> responsible for approximately 70% of the country’s total CO<sub>2</sub> industrial emissions. Other significant fossil carbon sources include the petrochemical industry <span class="dot dot_petro"></span>, which generates emissions through the production of synthetic fuels and chemicals like ammonia, methanol, and ethylene, among others. Aditionally, the metal industry <span class="dot dot_metals"></span>, which includes steel, ferroalloy, and aluminum production, along with the cement sector <span class="dot dot_cement"></span>, also plays a substantial role in South Africa’s fossil carbon emissions.<br>
-  <br>Biogenic CO<sub>2</sub> emissions in South Africa arise from industrial activities using biomass as a power source or feedstock. Notable examples include the pulp and paper <span class="dot dot_paper"></span> and the sugar industry <span class="dot dot_sugar"></span>, where the potential for biogenic carbon accounts for 70-80% and 80-90% of their total CO<sub>2</sub> emissions, respectively. Additionally, other biogenic emissions result from activities such as bioethanol production <span class="dot dot_bioethanol"></span>, as well as biogas and biomass power plants <span class="dot dot_biopower"></span>.<br>
+  <br>Biogenic CO<sub>2</sub> emissions in South Africa arise from industrial activities using biomass as a power source or feedstock. Notable examples include the pulp and paper <span class="dot dot_paper"></span> and the sugar industry <span class="dot dot_sugar"></span>, where the potential for biogenic carbon accounts for 70-80% and 80-90% of their total CO<sub>2</sub> emissions, respectively (note that the values on the map represent total CO₂ emissions). Additionally, other biogenic emissions result from activities such as bioethanol production <span class="dot dot_bioethanol"></span>, as well as biogas and biomass power plants <span class="dot dot_biopower"></span>.<br>
   `,
   manual_filter_title: `Filter Manually`,
   emission_type: `Type of CO<sub>2</sub> emissions:`,
@@ -29,8 +29,8 @@ var translations_en = {
   statistics_title: `Statistics`,
   statistics: `Total emissions in South Africa for selected filters:`,
   statistics_total: ` &nbsp;kilotonnes of CO<sub>2</sub> per years`,
-  circle_title: `Change the circle size`,
-  circle_size: `Use this control to adjust the scale (size) of the circles to better visualize sites with the lowest emissions on the map.`,
+  circle_title: `<br>Adjust Data Point Size`,
+  circle_size: `Use this control to adjust the scale (size) of the circles to better visualize sites with the lowest emissions on the map.`,  
   zoom_factor: `Zoom factor`,
   scale_title: `Emissions in <span title="kilo or 1&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">kt</span>/year`,
   data_title: `Data and sources`,
