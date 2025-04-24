@@ -505,8 +505,12 @@ if (biogenicLayersVisible) {
     allLayersVisible = false;
     if (lang==="es") {
         document.getElementById('toggle-all-button').text = 'Seleccionar todo';
+        toggleAllButton.classList.remove('btn-secondary')
+        toggleAllButton.classList.add('btn-outline-secondary')
     } else if (lang==="en") {
         document.getElementById('toggle-all-button').text = 'Select all';
+        toggleAllButton.classList.remove('btn-secondary')
+        toggleAllButton.classList.add('btn-outline-secondary')
     }
     document.getElementById("toggle-all-button").classList.add('btn-outline-secondary');
     document.getElementById("toggle-all-button").classList.remove('btn-secondary');
@@ -582,8 +586,8 @@ map = L.map('map', {
     scrollWheelZoom: false,
     zoomControl: false, // to put the zoom butons on the right
     minZoom: 5,     // damit man nicht zu weit rauszoomen kann
-    // maxBounds: bounds,  // [    // damit man nicht nach links,rechts,oben, unten schieben kann; DISABLE PANNING
-    // maxBoundsViscosity: 1    // damit gar kein panning außerhalb der bounds möglich ist. 
+    maxBounds: bounds,  // [    // damit man nicht nach links,rechts,oben, unten schieben kann; DISABLE PANNING
+    maxBoundsViscosity: 1    // damit gar kein panning außerhalb der bounds möglich ist. 
                             // 0: bouncing back; 1: no panning at all possible
 })
 
@@ -808,8 +812,8 @@ if (map.hasLayer(layer)) {
         toggleIndustrialButton.classList.add('toggle-industrial-button');
     } else if (industryType=="biogenic") {
         biogenicLayersVisible = false;
-        toggleBiogenicButton.style.backgroundColor="white";
-        toggleBiogenicButton.style.color="black";            
+        toggleBiogenicButton.style.backgroundColor="";
+        toggleBiogenicButton.style.color="";            
     }
     allLayersVisible = false;
     if (lang==="es") {
@@ -842,10 +846,14 @@ if (map.hasLayer(layer)) {
         }        
     });
     if(biogenicLayersVisible==true) {
-        toggleBiogenicButton.style.backgroundColor=emissionColors_D['biogenic'];
-    }
+        //toggleBiogenicButton.style.backgroundColor=emissionColors_D['biogenic'];
+        toggleBiogenicButton.classList.remove("toggle-biogenic-button-outline");
+        toggleBiogenicButton.classList.add("toggle-biogenic-button");
+    } 
     if(industrialLayersVisible==true) {
-        toggleIndustrialButton.style.backgroundColor=emissionColors_D['industrial'];
+        // toggleIndustrialButton.style.backgroundColor=emissionColors_D['industrial'];
+        toggleIndustrialButton.classList.remove("toggle-industrial-button-outline")
+        toggleIndustrialButton.classList.add("toggle-industrial-button")
     }
 
     // repeat for the ALL Layers button
@@ -856,10 +864,22 @@ if (map.hasLayer(layer)) {
         allLayersVisible = true;
         if (lang==="es") {
             document.getElementById('toggle-all-button').text = 'Deseleccionar todo';
+            toggleAllButton.classList.remove('btn-outline-secondary')
+            toggleAllButton.classList.add('btn-secondary')
         } else if (lang==="en") {
             document.getElementById('toggle-all-button').text = 'Deselect all';
+            toggleAllButton.classList.remove('btn-outline-secondary')
+            toggleAllButton.classList.add('btn-secondary')
         }
     }
+}
+if (biogenicLayersVisible==false) {
+    toggleBiogenicButton.classList.remove("toggle-biogenic-button");
+    toggleBiogenicButton.classList.add("toggle-biogenic-button-outline");
+}
+if(industrialLayersVisible==false) {
+    toggleIndustrialButton.classList.remove("toggle-industrial-button")
+    toggleIndustrialButton.classList.add("toggle-industrial-button-outline")
 }
 }
 
