@@ -576,7 +576,7 @@ maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
 // SET MAP BOUNDARIES 
 // dragging and panning of the map to other countries not possible
 bounds = new L.LatLngBounds(
-    new L.LatLng(-20.00000, 7.00000), // Rand oben links 
+    new L.LatLng(-4.300000, 7.00000), // Rand oben links 
     new L.LatLng(-38.032825, 37.081656) // Rand unten rechts
     );
 /* Set up the map with initial center and zoom level */
