@@ -28,9 +28,9 @@ var translations_en = {
   
   statistics_title: `Statistics`,
   statistics: `Total emissions in South Africa for selected filters:`,
-  statistics_total: ` &nbsp;kilotonnes of CO<sub>2</sub> per years`,
+  statistics_total: ` &nbsp;kilotonnes of CO<sub>2</sub> per year`,
   circle_title: `<br>Adjust Data Point Size`,
-  circle_size: `Use this control to adjust the scale (size) of the circles to better visualize sites with the lowest emissions on the map.`,  
+  circle_size: `Use this control to adjust the scale (size) of the circles to better visualise sites with the lowest emissions on the map.`,  
   zoom_factor: `Zoom factor`,
   scale_title: `Emissions in <span title="kilo or 1&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">kt</span>/year`,
   data_title: `Data and sources`,
@@ -41,9 +41,9 @@ var translations_en = {
   <br><b>Petrochemical</b>
   <br>Major CO₂ emitters in South Africa’s petrochemical industry are associated with Sasol's facilities, with emission values sourced from Sasol’s Climate Change Report [5].<br> 
   <br><b>Iron & Steel</b>
-  <br>Based on the melting processes used for steel production at each location [6], emission factors of 2.5, 0.6, and 0.4 tonnes of CO2 per tonne of steel were considered (for blast, electric arc, and induction furnaces, respectively). These factors were gathered from steel industry reports [7, 8] and additional literature sources [9, 10]. Assuming an 80% capacity factor for South Africa’s steel industry [6], and considering the total installed capacity at various iron and steel manufacturers [11-17], CO₂ emission values were allocated.<br> 
+  <br>Based on the melting processes used for steel production at each location [6], emission factors of 2.5, 0.6, and 0.4 tonnes of CO₂ per tonne of steel were considered (for blast, electric arc, and induction furnaces, respectively). These factors were gathered from steel industry reports [7, 8] and additional literature sources [9, 10]. Assuming an 80% capacity factor for South Africa’s steel industry [6], and considering the total installed capacity at various iron and steel manufacturers [11-17], CO₂ emission values were allocated.<br> 
   <br><b>Ferroalloy</b>
-  <br>Emission factors of 2.7 and 1.2 tonnes of CO2 per tonne of ferroalloy (ferrochrome and silicomanganese/ferromanganese, respectively) were applied based on the type of ferroalloy produced at each location. These values were sourced from sustainability reports of key South African ferroalloy producers [18, 19]. Using a representative capacity factor of 70% for South Africa’s ferroalloy industry [18, 20], and accounting for the total installed capacity across various manufacturers [12, 21, 22], CO₂ emissions were allocated accordingly.<br>
+  <br>Emission factors of 2.7 and 1.2 tonnes of CO₂ per tonne of ferroalloy (ferrochrome and silicomanganese/ferromanganese, respectively) were applied based on the type of ferroalloy produced at each location. These values were sourced from sustainability reports of key South African ferroalloy producers [18, 19]. Using a representative capacity factor of 70% for South Africa’s ferroalloy industry [18, 20], and accounting for the total installed capacity across various manufacturers [12, 21, 22], CO₂ emissions were allocated accordingly.<br>
   <br><b>Cement</b>
   <br>CO₂ emissions from South Africa’s mineral sector are predominantly attributed to the cement industry. Emission values from various producers were sourced from the study Carbon Sources for PtX Products and Synthetic Fuels in South Africa [2].<br> 
   <br><b>Aluminum</b>
