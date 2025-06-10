@@ -30,7 +30,7 @@ var translations_en = {
   statistics: `Total emissions in South Africa for selected filters:`,
   statistics_total: ` &nbsp;kilotonnes of CO<sub>2</sub> per year`,
   circle_title: `<br>Adjust Data Point Size`,
-  circle_size: `Use this control to adjust the scale (size) of the circles to better visualise sites with the lowest emissions on the map.<br><br><b>Note</b>: The stars visible on the map indicate national or administrative capitals, while dashed lines represent major shipping routes included by default in the base map. These elements are not part of the project’s data. `,  
+  circle_size: `Use this control to adjust the scale (size) of the circles to better visualise sites with the lowest emissions on the map.<br><br><b>Note</b>: The stars visible on the map indicate national or administrative capitals, while dashed lines represent ferry routes included by default in the base map. These elements are not part of the project’s data. `,  
   zoom_factor: `Zoom factor`,
   scale_title: `Emissions in <span title="kilo or 1&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">kt</span>/year`,
  
