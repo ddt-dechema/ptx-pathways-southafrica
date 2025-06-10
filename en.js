@@ -30,9 +30,11 @@ var translations_en = {
   statistics: `Total emissions in South Africa for selected filters:`,
   statistics_total: ` &nbsp;kilotonnes of CO<sub>2</sub> per year`,
   circle_title: `<br>Adjust Data Point Size`,
-  circle_size: `Use this control to adjust the scale (size) of the circles to better visualise sites with the lowest emissions on the map.`,  
+  circle_size: `Use this control to adjust the scale (size) of the circles to better visualise sites with the lowest emissions on the map.<br><br><b>Note</b>: The stars visible on the map indicate national or administrative capitals, while dashed lines represent major shipping routes included by default in the base map. These elements are not part of the project’s data. `,  
   zoom_factor: `Zoom factor`,
   scale_title: `Emissions in <span title="kilo or 1&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">kt</span>/year`,
+ 
+
   data_title: `Data and sources`,
   methods: `<h2>Sources and Methodology</h2>
   This map is based on information from South Africa’s Department of Forestry, Fisheries and the Environment, as presented in the 9th National Greenhouse Gas Inventory Report for the Republic of South Africa [1], and the published study Carbon Sources for PtX Products and Synthetic Fuels in South Africa [2]. Using this information, along with further estimates derived from public sources and industry-specific information, CO₂ emissions allocations were determined as detailed below.<br>
