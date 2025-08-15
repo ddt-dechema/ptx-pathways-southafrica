@@ -176,39 +176,39 @@ var allLayers = [
 
 // Loop through the button data and create buttons
 allLayers.forEach(data => {
-// Create a button element
-const button = document.createElement('button');
+    // Create a button element
+    const button = document.createElement('button');
 
-// Set the button's text to the name from the data
-if(lang=="en") {
-    button.textContent = data.name_en;
-} else if (lang=="es") {
-    button.textContent = data.name_es;
-}    
-// Set the button's ID to the ID from the data
-button.id = data.id;
-// Add a class for styling (if needed)
-button.classList.add('btn', 'custom-button-class', 'toggle-layer-button', 'button');
-button.classList.add(data.id);
-// Set the button's background color from the data
-button.style.backgroundColor = emissionTypeColors_D[data.name];
-// add "data-layer" name for each button
-button.setAttribute('data-layer', data.name);
-button.setAttribute('industry-type', data.industry)
-// Append the button to the container
-buttonContainer.appendChild(button);
+    // Set the button's text to the name from the data
+    if(lang=="en") {
+        button.textContent = data.name_en;
+    } else if (lang=="es") {
+        button.textContent = data.name_es;
+    }    
+    // Set the button's ID to the ID from the data
+    button.id = data.id;
+    // Add a class for styling (if needed)
+    button.classList.add('btn', 'custom-button-class', 'toggle-layer-button', 'button');
+    button.classList.add(data.id);
+    // Set the button's background color from the data
+    button.style.backgroundColor = emissionTypeColors_D[data.name];
+    // add "data-layer" name for each button
+    button.setAttribute('data-layer', data.name);
+    button.setAttribute('industry-type', data.industry)
+    // Append the button to the container
+    buttonContainer.appendChild(button);
 });
 
 var industrialLayers = [];
 var biogenicLayers = [];
 
 allLayers.forEach(data => {
-if(data.industry=="industrial") {
-    industrialLayers.push(data.name);}
+    if(data.industry=="industrial") {
+        industrialLayers.push(data.name);}
 });
 allLayers.forEach(data => {
-if(data.industry=="biogenic") {
-    biogenicLayers.push(data.name);}
+    if(data.industry=="biogenic") {
+        biogenicLayers.push(data.name);}
 });
 
 ////////////////////////////////////////////////////
@@ -949,105 +949,113 @@ table_selected.innerHTML=formatSI_own(formattedEmissions_selected/1000);
 /* And finally load all json data and display it */
 /*************************************************/
 document.addEventListener('DOMContentLoaded', (event) => {
-if (lang=="en") {
-    (function ($) {
-        $('#language-toggle').prop('checked', true);
-    })(jQuery);
-    updateContent('en');
-} else {
-    updateContent('es');
-}
+    if (lang=="en") {
+        (function ($) {
+            $('#language-toggle').prop('checked', true);
+        })(jQuery);
+        updateContent('en');
+    } else {
+        updateContent('es');
+    }
 
-showMap();
-// load formatSI
-loadGlobalDefs();
+    showMap();
+    // load formatSI
+    loadGlobalDefs();
 
-// Fetch the GeoJSON data from the URL
-fetch(geojsonURL)
-.then(response => response.json())
-.then(data => {
-    // Check if the GeoJSON data contains features
-    // Loop through the features to find the maximum value
-    // only consider those geojson features, which actually have coordinates.
-    // Iterate through GeoJSON data features
-    data.features.forEach(function (feature) {
-        var Industry = feature.properties.Industry;
-        var emissions = parseFloat(feature.properties.CO2_emissions_t);
-        // Update the total emissions for the industry type
-        if (typeof emissions === 'number' && !isNaN(emissions)) {
-            if (!totalEmissions[Industry]) {
-                totalEmissions[Industry] = 0;
-            }
-            // count number of entries:
-            if (!counts[Industry]) {
-                counts[Industry] = 1;
+    // Fetch the GeoJSON data from the URL
+    fetch(geojsonURL)
+    .then(response => response.json())
+    .then(data => {
+        // Check if the GeoJSON data contains features
+        // Loop through the features to find the maximum value
+        // only consider those geojson features, which actually have coordinates.
+        // Iterate through GeoJSON data features
+        data.features.forEach(function (feature) {
+            var Industry = feature.properties.Industry;
+            var emissions = parseFloat(feature.properties.CO2_emissions_t);
+            // Update the total emissions for the industry type
+            if (typeof emissions === 'number' && !isNaN(emissions)) {
+                if (!totalEmissions[Industry]) {
+                    totalEmissions[Industry] = 0;
+                }
+                // count number of entries:
+                if (!counts[Industry]) {
+                    counts[Industry] = 1;
+                } else {
+                    counts[Industry]++;
+                }
+                totalEmissions[Industry] += emissions;
+            } 
+        });
+        let sum = 0;
+        
+        for (k in counts) {
+            sum += counts[k];
+        }
+
+        for (let i = 0; i < allLayers.length; i++) {
+            const industryValue = allLayers[i]['name'];
+
+            if(totalEmissions[industryValue]) {
+                var formattedEmissions = formatSI_own(totalEmissions[industryValue]/1000);
+
+                let industry_lang;
+                if(lang=="en") {
+                    industry_lang = allLayers.find(item => item.name === industryValue)?.name_en;
+                }
+                if(lang=="es") {
+                    industry_lang = allLayers.find(item => item.name === industryValue)?.name_es;
+                }
+                let industry_short = allLayers.find(item => item.name === industryValue)?.id;                      
+
+                table += "<tr><td class="+industry_short+" id='industry_type_"+industry_short+"'>" + industry_lang 
+                    + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td>"
+                    + "<td style='text-align: right;'>" + counts[industryValue] + "</td></tr>";
             } else {
-                counts[Industry]++;
+                console.log(industryValue + ' could not be found in the geojson.')
             }
-            totalEmissions[Industry] += emissions;
-        } 
-    });
-    let sum = 0;
-    
-    for (k in counts) {
-        sum += counts[k];
-    }
-
-    for (let i = 0; i < allLayers.length; i++) {
-        const industryValue = allLayers[i]['name'];
-
-        if(totalEmissions[industryValue]) {
-            var formattedEmissions = formatSI_own(totalEmissions[industryValue]/1000);
-
-            let industry_lang;
-            if(lang=="en") {
-                industry_lang = allLayers.find(item => item.name === industryValue)?.name_en;
-            }
-            if(lang=="es") {
-                industry_lang = allLayers.find(item => item.name === industryValue)?.name_es;
-            }
-            let industry_short = allLayers.find(item => item.name === industryValue)?.id;                      
-
-            table += "<tr><td class="+industry_short+" id='industry_type_"+industry_short+"'>" + industry_lang 
-                + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td>"
-                + "<td style='text-align: right;'>" + counts[industryValue] + "</td></tr>";
-        } else {
-            console.log(industryValue + ' could not be found in the geojson.')
         }
-    }
 
-    for (const [key, IndustryEmissions] of Object.entries(totalEmissions)) {
-        totalEmissions_total += IndustryEmissions;
-    }
-   
-    formattedEmissions_total = formatSI_own(totalEmissions_total/1000)
-
-    table += "<tr><th>TOTAL: </th>\
-            <th style='text-align: right;border-top: 1px solid;'>"+formattedEmissions_total+"</th>\
-            <th style='text-align: right;border-top: 1px solid;'>" + sum + "</th>\
-        </tr></table>";       
-
-    // Display the table in a specific HTML element
-    table_all.innerHTML = table;
-    table_selected.innerHTML=formattedEmissions_total;
-    
-    data.features.forEach(function (feature) {
-        var propertyValue = feature.properties[propertyToFindMax];
-        if (!isNaN(propertyValue) && feature.geometry.coordinates && propertyValue > maxEmissionsArgentina) {
-            maxEmissionsArgentina = parseFloat(propertyValue);
+        for (const [key, IndustryEmissions] of Object.entries(totalEmissions)) {
+            totalEmissions_total += IndustryEmissions;
         }
-    });
-    // maxRadius_Mt = maxEmissionsArgentina / 1000000;
-    maxRadius_kt = format_nodecimal(maxEmissionsArgentina/1000);
     
-    // hier wird sichergestellt, dass die Legende erst an dieser Stelle erzeugt wird. Sonst kann mit der maxValue nicht gearbeitet werden
-    createScale(1); 
-})
-.catch(error => {
-    console.error(`Error loading GeoJSON data: ${error}`);
-});
+        formattedEmissions_total = formatSI_own(totalEmissions_total/1000)
 
-allLayers.forEach(data => {
-    addGeoJSONLayer(data.name)
-});
+        table += "<tr><th>TOTAL: </th>\
+                <th style='text-align: right;border-top: 1px solid;'>"+formattedEmissions_total+"</th>\
+                <th style='text-align: right;border-top: 1px solid;'>" + sum + "</th>\
+            </tr></table>";       
+
+        // Display the table in a specific HTML element
+        table_all.innerHTML = table;
+        table_selected.innerHTML=formattedEmissions_total;
+        
+        data.features.forEach(function (feature) {
+            var propertyValue = feature.properties[propertyToFindMax];
+            if (!isNaN(propertyValue) && feature.geometry.coordinates && propertyValue > maxEmissionsArgentina) {
+                maxEmissionsArgentina = parseFloat(propertyValue);
+            }
+        });
+        // maxRadius_Mt = maxEmissionsArgentina / 1000000;
+        maxRadius_kt = format_nodecimal(maxEmissionsArgentina/1000);
+        
+        // hier wird sichergestellt, dass die Legende erst an dieser Stelle erzeugt wird. Sonst kann mit der maxValue nicht gearbeitet werden
+        createScale(1); 
+    })
+    .catch(error => {
+        console.error(`Error loading GeoJSON data: ${error}`);
+    });
+
+    allLayers.forEach(data => {
+        addGeoJSONLayer(data.name)
+    });
+    // Warten, bis der Button existiert
+    const checkButton = setInterval(function () {
+        const btn = document.getElementById("toggle-industrial-button");
+        if (btn) {
+            btn.click();
+            clearInterval(checkButton); // Intervall stoppen
+        }
+    }, 200); // prüft alle 200ms
 })
