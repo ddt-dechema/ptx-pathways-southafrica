@@ -651,3 +651,22 @@ hr {
 .table-custom tr td, table tr th {
   background-color: rgba(255,255,255 , 0) !important;
 }
+/* Gesamter Tooltip-Bereich */
+.introjs-tooltip {
+  max-width: 600px !important; /* Standard sind ~300px */
+  min-width: 400px;             /* Falls du einen Mindestwert willst */
+  padding: 20px;                /* Mehr Innenabstand für Luft */
+}
+
+/* Reiner Textbereich im Tooltip */
+.introjs-tooltiptext {
+  font-size: 1.1rem; /* optional größere Schrift */
+  line-height: 1.5;  /* bessere Lesbarkeit */
+}
+
+/* Bild im Tooltip */
+.introjs-tooltip img {
+  max-width: 100%; /* Bild passt sich an, wird aber nicht skaliert */
+  height: auto;
+  display: block;
+}
