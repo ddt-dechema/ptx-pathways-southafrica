@@ -110,6 +110,12 @@ var translations_en = {
   download_csv: `Download the sources of CO₂ in South Africa (csv)`,
   download_geojson: `Download the sources of CO₂ in South Africa (geojson)`,
 
+  biogenic_title: `Others`,
+  biogenic_header: `<h3>Other biogenic sources</h3>`,
+  biogenic_text: `<p>This map contains only a subset of biogenic sources available in South Africa, which were identified within the project scope. Others can be found under the following links:</p>`,
+  biogenic_link_invasive: `Invasive alien plant taxa (approx. 32 species). Found via <a href="https://dffeportal.environment.gov.za/portal/home/item.html?id=17de13c509ef4d3caf279d84e77312c3" target="_blank">National IAP survey</a>`,
+
+
   disclaimer_title: `Data, licensing and privacy`,
   map_programming: `<h3>Map development</h3>This map was developed by Dinh Du Tran (DECHEMA e.V.) with information collected by DECHEMA.`,
   contact: `<h3>Contact</h3>

@@ -277,6 +277,12 @@ if (lang=="en") {
     $("#map_programming").html(translations.map_programming);	
     $("#contact").html(translations.contact);
     $("#disclaimer").html(translations.disclaimer);
+
+    $("#biogenic_title").html(translations.biogenic_title);
+    $("#biogenic_header").html(translations.biogenic_header);
+    $("#biogenic_text").html(translations.biogenic_text);
+    $("#biogenic_link_invasive").html(translations.biogenic_link_invasive);
+
     $("#legal").html(translations.legal);
     
     // update button and table texts, which are generated in main.js
@@ -1110,8 +1116,8 @@ function startIntro() {
                 intro: `This PtX Hub map displays carbon sources in South Africa mapping! If you want, you can follow this short introduction to see the main functions, or you can skip the tour.<br>
                 <button id="set-cookie-no-tour" class="introjs-button" title="This is the only cookie used on this site. If you don't want to use cookies, the tour will be shown on each reload. Click anywhere outside the tour to make it disappear."><p>Don't show the tour again</p><p style="font-size: x-small; color: #746427;">&#9432; This will set a cookie.</p></button>
                 <hr>
-                <img src="https://images.unsplash.com/photo-1608096299210-db7e38487075?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" />
-                Hier steht eine Erläuterung zu den Grafiken`
+                <img src="graph1.png    " />
+                Initially, only biogenic CO<sub>2</sub> sources are displayed. Those, however, are only a small part of South Africa's CO2 sources, compared to those from industrial plants.`
             },
             {
                 title: 'Close',
@@ -1134,12 +1140,17 @@ function startIntro() {
                 intro: 'Information on data used and the methodology are explained in this tab.',
                 position: 'right'
             },
+                {
+                element: '#biogenic-sources-tab-li',
+                intro: 'Other biogenic sources, such as invasive plants, etc. are listed here. Those are not shown on this map.',
+                position: 'right'
+            },
             {
                 element: '#disclaimer-tab-li',
                 intro: "Legal or contact information are shown here. You can also restart the tour here.",
             },
             {
-                intro: "Click on any bubble to see more information about it.<br>That's it, now play with it."
+                intro: "Click on any bubble to see more information about it.<br>That's it, now feel free to play with the map."
             }
         ],
         // doneLabel: `<div title="This is the only cookie used on this site. \
