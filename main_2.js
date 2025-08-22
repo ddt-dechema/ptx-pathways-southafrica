@@ -1116,7 +1116,7 @@ function startIntro() {
                 intro: `This PtX Hub map displays carbon sources in South Africa mapping! If you want, you can follow this short introduction to see the main functions, or you can skip the tour.<br>
                 <button id="set-cookie-no-tour" class="introjs-button" title="This is the only cookie used on this site. If you don't want to use cookies, the tour will be shown on each reload. Click anywhere outside the tour to make it disappear."><p>Don't show the tour again</p><p style="font-size: x-small; color: #746427;">&#9432; This will set a cookie.</p></button>
                 <hr>
-                <img src="graph1.png    " />
+                <img src="Graph1.png" />
                 Initially, only biogenic CO<sub>2</sub> sources are displayed. Those, however, are only a small part of South Africa's CO2 sources, compared to those from industrial plants.`
             },
             {
