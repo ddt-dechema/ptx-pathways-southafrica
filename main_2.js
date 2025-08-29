@@ -356,52 +356,43 @@ for (var key in obj) {
 return true;
 }
 
-// Function to add the GeoJSON layer to the map
-function addGeoJSONLayer(filterValue) {
-fetch(geojsonURL)
-.then(response => response.json())
-.then(data => {
-        // Filter the data and exclude features with empty coordinates
-        // var filteredData = data.features.filter(function (feature) {
-        var filteredData = data.features.filter(function (feature) {
-            // Check if 'geometry' property is defined and if 'coordinates' is not empty
-            var hasValidCoordinates = feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates);
-            // Check if the industryType matches the filterValue
-            var matchesIndustry = feature.properties.Industry === filterValue;
-            // Return true if both conditions are met
-            return hasValidCoordinates && matchesIndustry;
-        });
+// // Function to add the GeoJSON layer to the map
+// function addGeoJSONLayer(filterValue) {
+//   return fetch(geojsonURL)
+//     .then(response => response.json())
+//     .then(data => {
+//       const filteredData = data.features.filter(function (feature) {
+//         const hasValidCoordinates = feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates);
+//         const matchesIndustry = feature.properties.Industry === filterValue;
+//         return hasValidCoordinates && matchesIndustry;
+//       });
 
-        // Create a GeoJSON layer and add it to the map
-        geojsonLayer = L.geoJSON(filteredData, {
-            pointToLayer: function (feature, latlng) {
-                // check, whether geojson contains both coordinates AND known emissions 
-                if (feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates) && feature.properties.CO2_emissions_t >0 ) {
-                    return L.circleMarker(latlng, {
-                        radius: Math.sqrt(feature.properties.CO2_emissions_t / (maxRadius_kt * 1000) )*50*sliderValue, 
-                        color: emissionTypeColors_D[filterValue],
-                        /*fillColor: feature.properties.color,*/
-                        fillColor: emissionTypeColors_D[filterValue],
-                        weight: 1,
-                        opacity: 0.7,
-                        fillOpacity: 0.5
-                    }).bindPopup(addCO2argentinaPopupHandler(feature));
-                } else {
-                    if (!parseFloat(feature.properties.CO2_emissions_t)>0) {
-                        console.log(feature.properties.Name, "(Company: ",feature.properties.Company,  ")"," does not contain information about CO2 emissions")
-                    } else if (!feature.geometry) {
-                        console.error(feature.properties.Name, "(Company: ",feature.properties.Company,  ")","does not contain valid coordinates");
-                    }            
-                }
-        }}) // .addTo(map);
-        // Assign the layer to the layers object with the filterValue as the key
-        layers[filterValue] = geojsonLayer;
-        geojsonLayer.addTo(map);
-    })
-    .catch(error => {
-        console.error(`Error loading GeoJSON data: ${error}`);
-    });
-}
+//       const geojsonLayer = L.geoJSON(filteredData, {
+//         pointToLayer: function (feature, latlng) {
+//           if (feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates) && feature.properties.CO2_emissions_t > 0) {
+//             return L.circleMarker(latlng, {
+//               radius: Math.sqrt(feature.properties.CO2_emissions_t / (maxRadius_kt * 1000)) * 50 * sliderValue,
+//               color: emissionTypeColors_D[filterValue],
+//               fillColor: emissionTypeColors_D[filterValue],
+//               weight: 1,
+//               opacity: 0.7,
+//               fillOpacity: 0.5
+//             }).bindPopup(addCO2argentinaPopupHandler(feature));
+//           } else {
+//             if (!(parseFloat(feature.properties.CO2_emissions_t) > 0)) {
+//               console.log(feature.properties.Name, "(Company:", feature.properties.Company, ") has no CO2 emissions");
+//             } else if (!feature.geometry) {
+//               console.error(feature.properties.Name, "(Company:", feature.properties.Company, ") has no coordinates");
+//             }
+//           }
+//         }
+//       });
+
+//       layers[filterValue] = geojsonLayer;
+//       geojsonLayer.addTo(map);
+//       return geojsonLayer; // wichtig: etwas zurückgeben, sodass das Promise einen Wert hat
+//     });
+// }
 
 // Function to toggle all layers
 function toggleAllLayers() {
@@ -951,121 +942,120 @@ table_selected.innerHTML=formatSI_own(formattedEmissions_selected/1000);
 // var url = new URL(window.location.href)
 // if (!mapLayoutOSM.classList.contains('is-info') && url.searchParams.get("style") == "OSM") toggleMapLayout()
 
+function addGeoJSONLayerFromData(data, filterValue) {
+  const filteredData = data.features.filter(function (feature) {
+    const hasValidCoordinates = feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates);
+    const matchesIndustry = feature.properties.Industry === filterValue;
+    return hasValidCoordinates && matchesIndustry;
+  });
+
+  const layer = L.geoJSON(filteredData, {
+    pointToLayer: function (feature, latlng) {
+      const em = parseFloat(feature.properties.CO2_emissions_t);
+      if (feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates) && Number.isFinite(em) && em > 0) {
+        return L.circleMarker(latlng, {
+          // maxRadius_kt ist NUMERISCH!
+          radius: Math.sqrt(em / (maxRadius_kt * 1000)) * 50 * sliderValue,
+          color: emissionTypeColors_D[filterValue],
+          fillColor: emissionTypeColors_D[filterValue],
+          weight: 1,
+          opacity: 0.7,
+          fillOpacity: 0.5
+        }).bindPopup(addCO2argentinaPopupHandler(feature));
+      } else {
+        if (!(Number.isFinite(em) && em > 0)) {
+          console.log(feature.properties.Name, "(Company:", feature.properties.Company, ")", "has no CO₂ data");
+        } else if (!feature.geometry) {
+          console.error(feature.properties.Name, "(Company:", feature.properties.Company, ")", "has no coordinates");
+        }
+      }
+    }
+  });
+
+  layers[filterValue] = layer;
+  layer.addTo(map);
+  return layer;
+}
+
 /*************************************************/
 /* And finally load all json data and display it */
 /*************************************************/
-document.addEventListener('DOMContentLoaded', (event) => {
-    if (lang=="en") {
-        (function ($) {
-            $('#language-toggle').prop('checked', true);
-        })(jQuery);
-        updateContent('en');
-    } else {
-        updateContent('es');
-    }
+document.addEventListener('DOMContentLoaded', () => {
+  if (lang=="en") { (function ($) { $('#language-toggle').prop('checked', true); })(jQuery); updateContent('en'); }
+  else { updateContent('es'); }
 
-    showMap();
-    // load formatSI
-    loadGlobalDefs();
+  showMap();
+  loadGlobalDefs(); // falls asynchron: auf Promise umbauen und .then davor einbauen
 
-    // Fetch the GeoJSON data from the URL
-    fetch(geojsonURL)
+  fetch(geojsonURL)
     .then(response => response.json())
     .then(data => {
-        // Check if the GeoJSON data contains features
-        // Loop through the features to find the maximum value
-        // only consider those geojson features, which actually have coordinates.
-        // Iterate through GeoJSON data features
-        data.features.forEach(function (feature) {
-            var Industry = feature.properties.Industry;
-            var emissions = parseFloat(feature.properties.CO2_emissions_t);
-            // Update the total emissions for the industry type
-            if (typeof emissions === 'number' && !isNaN(emissions)) {
-                if (!totalEmissions[Industry]) {
-                    totalEmissions[Industry] = 0;
-                }
-                // count number of entries:
-                if (!counts[Industry]) {
-                    counts[Industry] = 1;
-                } else {
-                    counts[Industry]++;
-                }
-                totalEmissions[Industry] += emissions;
-            } 
-        });
-        let sum = 0;
-        
-        for (k in counts) {
-            sum += counts[k];
+      // --- Aggregationen, Tabellen, Summen ---
+      data.features.forEach(function (feature) {
+        const Industry = feature.properties.Industry;
+        const emissions = parseFloat(feature.properties.CO2_emissions_t);
+        if (Number.isFinite(emissions)) {
+          totalEmissions[Industry] = (totalEmissions[Industry] || 0) + emissions;
+          counts[Industry] = (counts[Industry] || 0) + 1;
         }
+      });
 
-        for (let i = 0; i < allLayers.length; i++) {
-            const industryValue = allLayers[i]['name'];
+      let sum = 0;
+      for (const k in counts) { sum += counts[k]; }
 
-            if(totalEmissions[industryValue]) {
-                var formattedEmissions = formatSI_own(totalEmissions[industryValue]/1000);
-
-                let industry_lang;
-                if(lang=="en") {
-                    industry_lang = allLayers.find(item => item.name === industryValue)?.name_en;
-                }
-                if(lang=="es") {
-                    industry_lang = allLayers.find(item => item.name === industryValue)?.name_es;
-                }
-                let industry_short = allLayers.find(item => item.name === industryValue)?.id;                      
-
-                table += "<tr><td class="+industry_short+" id='industry_type_"+industry_short+"'>" + industry_lang 
-                    + ": </td><td style='text-align: right;'>" + formattedEmissions + "</td>"
-                    + "<td style='text-align: right;'>" + counts[industryValue] + "</td></tr>";
-            } else {
-                console.log(industryValue + ' could not be found in the geojson.')
-            }
+      for (let i = 0; i < allLayers.length; i++) {
+        const industryValue = allLayers[i].name;
+        if (totalEmissions[industryValue]) {
+          const formattedEmissions = formatSI_own(totalEmissions[industryValue] / 1000);
+          const layer = allLayers.find(item => item.name === industryValue);
+          const industry_lang = (lang === "en" ? layer?.name_en : layer?.name_es);
+          const industry_short = layer?.id;
+          table += `<tr><td class=${industry_short} id="industry_type_${industry_short}">${industry_lang}: </td>
+                    <td style="text-align:right;">${formattedEmissions}</td>
+                    <td style="text-align:right;">${counts[industryValue]}</td></tr>`;
+        } else {
+          console.log(industryValue + ' could not be found in the geojson.');
         }
+      }
 
-        for (const [key, IndustryEmissions] of Object.entries(totalEmissions)) {
-            totalEmissions_total += IndustryEmissions;
+      for (const v of Object.values(totalEmissions)) totalEmissions_total += v;
+      const formattedEmissions_total = formatSI_own(totalEmissions_total / 1000);
+
+      table += `<tr><th>TOTAL: </th>
+                <th style="text-align:right;border-top:1px solid;">${formattedEmissions_total}</th>
+                <th style="text-align:right;border-top:1px solid;">${sum}</th>
+                </tr></table>`;
+
+      table_all.innerHTML = table;
+      table_selected.innerHTML = formattedEmissions_total;
+
+      // --- Max & Scale ---
+      data.features.forEach(function (feature) {
+        const val = parseFloat(feature.properties[propertyToFindMax]);
+        if (Number.isFinite(val) && feature.geometry?.coordinates && val > maxEmissionsArgentina) {
+          maxEmissionsArgentina = val;
         }
-    
-        formattedEmissions_total = formatSI_own(totalEmissions_total/1000)
+      });
 
-        table += "<tr><th>TOTAL: </th>\
-                <th style='text-align: right;border-top: 1px solid;'>"+formattedEmissions_total+"</th>\
-                <th style='text-align: right;border-top: 1px solid;'>" + sum + "</th>\
-            </tr></table>";       
+      // WICHTIG: numerisch lassen!
+      maxRadius_kt = maxEmissionsArgentina / 1000;         // Zahl für die Radien
+      maxRadius_kt_label = format_nodecimal(maxRadius_kt); // nur für die Legende/Text
 
-        // Display the table in a specific HTML element
-        table_all.innerHTML = table;
-        table_selected.innerHTML=formattedEmissions_total;
-        
-        data.features.forEach(function (feature) {
-            var propertyValue = feature.properties[propertyToFindMax];
-            if (!isNaN(propertyValue) && feature.geometry.coordinates && propertyValue > maxEmissionsArgentina) {
-                maxEmissionsArgentina = parseFloat(propertyValue);
-            }
-        });
-        // maxRadius_Mt = maxEmissionsArgentina / 1000000;
-        maxRadius_kt = format_nodecimal(maxEmissionsArgentina/1000);
-        
-        // hier wird sichergestellt, dass die Legende erst an dieser Stelle erzeugt wird. Sonst kann mit der maxValue nicht gearbeitet werden
-        createScale(1); 
+      createScale(1); // darf intern maxRadius_kt_label für Anzeige benutzen
+
+      return data; // Daten an den nächsten .then weiterreichen
     })
-    .then(checkIfIntro)
+    .then(data => {
+      // Layer aus den bereits geladenen Daten erstellen (kein zweiter Fetch!)
+      allLayers.forEach(l => addGeoJSONLayerFromData(data, l.name));
+      // erst jetzt toggeln + Intro
+      toggleIndustrialLayers();
+      checkIfIntro();
+    })
     .catch(error => {
-        console.error(`Error loading GeoJSON data: ${error}`);
+      console.error(`Error loading GeoJSON data: ${error}`);
     });
-
-    allLayers.forEach(data => {
-        addGeoJSONLayer(data.name)
-    });
-    // Warten, bis der Button existiert
-    const checkButton = setInterval(function () {
-        const btn = document.getElementById("toggle-industrial-button");
-        if (btn) {
-            btn.click();
-            clearInterval(checkButton); // Intervall stoppen
-        }
-    }, 200); // prüft alle 200ms
-})
+});
 
 /***********************************/
 /* Helper functions (cookies etc.) */
@@ -1091,7 +1081,8 @@ const deleteCookie = (name, path = "/") => {
 /***********************************/
 function setCookieNoTour() {
     setCookie('no-tour', 'true')
-    introJs().exit()
+    // introJs().exit()
+    if (tour) tour.exit();
 }
 
 document.getElementById('show-intro').addEventListener('click', () => {
@@ -1104,26 +1095,24 @@ function checkIfIntro() {
         startIntro()
     }
 }
-
+let tour;
 function startIntro() {
-    var intro = introJs()
-    intro.onexit(() => map.sidebar.open('info-content'))
-    introJs.tour()
-    
+    // var intro = introJs()
+    // introJs.onexit(() => map.sidebar.open('info-content'))
+    tour = introJs.tour()
     .setOptions({
         steps: [{
                 title: 'Welcome',
                 intro: `This PtX Hub map displays carbon sources in South Africa mapping! If you want, you can follow this short introduction to see the main functions, or you can skip the tour.<br>
-                <button id="set-cookie-no-tour" class="introjs-button" title="This is the only cookie used on this site. If you don't want to use cookies, the tour will be shown on each reload. Click anywhere outside the tour to make it disappear."><p>Don't show the tour again</p><p style="font-size: x-small; color: #746427;">&#9432; This will set a cookie.</p></button>
+                <button id="set-cookie-no-tour" onclick="setCookieNoTour()" class="introjs-button" title="This is the only cookie used on this site. If you don't want to use cookies, the tour will be shown on each reload. Click anywhere outside the tour to make it disappear."><p>Don't show the tour again</p><p style="font-size: x-small; color: #746427;">&#9432; This will set a cookie.</p></button>
                 <hr>
                 <img src="Graph1.png" />
-                Initially, only biogenic CO<sub>2</sub> sources are displayed. Those, however, are only a small part of South Africa's CO2 sources, compared to those from industrial plants.`
+                The map shows both biogenic and industrial sources of CO₂. Although the current amount of CO₂ emitted by industrial plants is high, sustainable biogenic sources deserve more attention in the long term.`
             },
             {
-                title: 'Close',
-                element: "#sidebar-close-info-span",
-                intro: `This closes the sidebar so you can focus on the map.'
-`
+                element: '#biogenic-sources-tab-li',
+                intro: 'The available biogenic point sources are not the only source of biogenic carbon for PtX. You can learn more about additional decentralized potential carbon sources here, although they are not shown on this map',
+                position: 'right'
             },
             {
                 element: '#info-tab-li',
@@ -1140,14 +1129,14 @@ function startIntro() {
                 intro: 'Information on data used and the methodology are explained in this tab.',
                 position: 'right'
             },
-                {
-                element: '#biogenic-sources-tab-li',
-                intro: 'Other biogenic sources, such as invasive plants, etc. are listed here. Those are not shown on this map.',
-                position: 'right'
-            },
             {
                 element: '#disclaimer-tab-li',
                 intro: "Legal or contact information are shown here. You can also restart the tour here.",
+            },
+            {
+                title: 'Close',
+                element: "#sidebar-close-info-span",
+                intro: 'This closes the sidebar so you can focus on the map.'
             },
             {
                 intro: "Click on any bubble to see more information about it.<br>That's it, now feel free to play with the map."
@@ -1158,12 +1147,14 @@ function startIntro() {
         // Click anywhere outside the tour to make it disappear.`,
         // showProgress: true,
         showStepNumbers: false // 🔹 Step-Nummern ausschalten
-
-    }
-    )
-    .start();
-    introJs.fn.oncomplete(setCookieNoTour)
+    })
+    .oncomplete(setCookieNoTour)
+    // .setOption("dontShowAgain", true) // funktioniert nicht wie gewollt
+    // .start()
+    tour.start();
+    
     map.sidebar.open('info-content')
     // intro.start()
-    document.getElementById('set-cookie-no-tour').addEventListener('click', setCookieNoTour)
+    // document.getElementById('set-cookie-no-tour').addEventListener('click', setCookieNoTour)
+
 }
