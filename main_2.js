@@ -280,8 +280,13 @@ if (lang=="en") {
 
     $("#biogenic_title").html(translations.biogenic_title);
     $("#biogenic_header").html(translations.biogenic_header);
-    $("#biogenic_text").html(translations.biogenic_text);
-    $("#biogenic_link_invasive").html(translations.biogenic_link_invasive);
+        
+    $("#biogenic_intro").html(translations.biogenic_intro);
+    $("#biogenic_IAP").html(translations.biogenic_IAP);
+    $("#biogenic_organic").html(translations.biogenic_organic);
+    $("#biogenic_ELT").html(translations.biogenic_ELT);
+    $("#biogenic_methodology").html(translations.biogenic_methodology);
+    $("#biogenic_sources").html(translations.biogenic_sources);
 
     $("#legal").html(translations.legal);
     

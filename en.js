@@ -112,9 +112,22 @@ var translations_en = {
 
   biogenic_title: `Others`,
   biogenic_header: `<h3>Other biogenic sources</h3>`,
-  biogenic_text: `<p>This map contains only a subset of biogenic sources available in South Africa, which were identified within the project scope. Others can be found under the following links:</p>`,
-  biogenic_link_invasive: `Invasive alien plant taxa (approx. 32 species). Found via <a href="https://dffeportal.environment.gov.za/portal/home/item.html?id=17de13c509ef4d3caf279d84e77312c3" target="_blank">National IAP survey</a>`,
-
+  biogenic_intro: `Decentralised biomass offers another source of biogenic carbon with high potential for establishing PtX processes in South Africa. As shown by the previous studies on bioenergy [1] and SAF production [2] in South Africa, particularly relevant are invasive alien plants (IAP), the organic fraction of municipal solid waste (MSW) and sewage sludge (SS). In addition, end-of-life tyres (ELT) present an interesting option for sourcing of biogenic carbon. 
+    Our estimations based on the available literature data (see methodology part for more details) demonstrate the following volumes of available biogenic carbon from these sources: `,  
+  
+  biogenic_IAP: `<br><h4>Invasive alien plants (IAP)</h4>
+  Invasive alien plants, a lignocellulosic woody biomass, is currently available in large quantities in South Africa, making it a promising source of biogenic carbon. Due to their high-water demand and extensive invasions, they pose a threat to water security and local ecosystems. It is a temporary resource, as the ultimate goal is the eradication of these species, with its management required to comply with existing legislation.
+  <i>Regional distribution: IAPs available at < 35% slope in 2018 [2]</i><br>`,
+  biogenic_organic: `<br><h4>Organic fraction of municipal solid waste (MSW) and sewage sludge (SS)</h4>
+  In South Africa, a high share of municipal solid waste — up to 75% in 2018 — is landfilled, posing a challenge for municipalities. At the same time, it contains a significant organic fraction, varying by season and location, which represents an unused source of biogenic carbon. The same applies to the solid organic fraction of sewage sludge.<br> 
+  <br><i>Regional availability:</i>
+  correlates with the population density and is expected to be high close to the large cities`,
+  biogenic_ELT: `<br><h4>End-of-life tyres (ELT)</h4>Natural rubber, a key component of tyres, is the main source of their biogenic carbon content, which varies depending on the type of vehicle. End-of-life tyres currently pose a challenge in South Africa, as improper disposal creates significant environmental and health risks. Coordinated utilisation could therefore help address both carbon sourcing and waste management issues.<br>
+  <br><i>Regional distribution: waste tyres in depots in February 2023 [3]</i><br>`,
+  biogenic_methodology: `<br><h4>Methodology for the potential estimation</h4>To be added`,
+  biogenic_sources: `<br><h4>Sources</h4>[1] <a href="https://bea.saeon.ac.za/wp-content/uploads/2021/03/Bio-Energy-Atlas.pdf" target="_blank">https://bea.saeon.ac.za/wp-content/uploads/2021/03/Bio-Energy-Atlas.pdf</a>
+  <br>[2] <a href="https://wwfafrica.awsassets.panda.org/downloads/saf_technical_report.pdf" target="_blank">https://wwfafrica.awsassets.panda.org/downloads/saf_technical_report.pdf</a>
+  <br>[3] <a href="https://www.dffe.gov.za/sites/default/files/legislations/nemwa_industrywastetyreplan_g50322gon4542.pdf" target="_blank">https://www.dffe.gov.za/sites/default/files/legislations/nemwa_industrywastetyreplan_g50322gon4542.pdf</a>`,
 
   disclaimer_title: `Data, licensing and privacy`,
   map_programming: `<h3>Map development</h3>This map was developed by Dinh Du Tran (DECHEMA e.V.) with information collected by DECHEMA.`,
