@@ -245,7 +245,7 @@ if (lang=="en") {
     $("#sidebar_title").html(translations.sidebar_title);
     $("#sidebar_header_filters").html(translations.sidebar_header_filters);
     $("#filter_title").html(translations.filter_title);
-    $("#filter_text").html(translations.filter_text);
+    $("#filter_text_introduction").html(translations.filter_text_introduction);
     $("#filter_text").html(translations.filter_text);
     
     $("#manual_filter_title").html(translations.manual_filter_title);
@@ -1115,18 +1115,13 @@ function startIntro() {
                 The map shows both biogenic and industrial sources of CO₂. Although the current amount of CO₂ emitted by industrial plants is high, sustainable biogenic sources deserve more attention in the long term.`
             },
             {
+                element: '#emitter-tab-li',
+                intro: 'In this tab, you can filter through different types of carbon sources.<br>They are divided into industrial and biogenic sources.',
+                position: 'right'
+            },
+            {
                 element: '#biogenic-sources-tab-li',
                 intro: 'The available biogenic point sources are not the only source of biogenic carbon for PtX. You can learn more about additional decentralized potential carbon sources here, although they are not shown on this map',
-                position: 'right'
-            },
-            {
-                element: '#info-tab-li',
-                intro: "Here you find information about the map and the data",
-                position: 'right'
-            },
-            {
-                element: '#emitter-tab-li',
-                intro: "In this tab, you can filter through different types of carbon sources.<br>They are divided into industrial and biogenic sources.",
                 position: 'right'
             },
             {
@@ -1135,12 +1130,17 @@ function startIntro() {
                 position: 'right'
             },
             {
+                element: '#info-tab-li',
+                intro: "Here you find information about the map and the data",
+                position: 'right'
+            },
+            {
                 element: '#disclaimer-tab-li',
                 intro: "Legal or contact information are shown here. You can also restart the tour here.",
             },
             {
                 title: 'Close',
-                element: "#sidebar-close-info-span",
+                element: "#sidebar-close-sources-span",
                 intro: 'This closes the sidebar so you can focus on the map.'
             },
             {
@@ -1158,8 +1158,7 @@ function startIntro() {
     // .start()
     tour.start();
     
-    map.sidebar.open('info-content')
+    map.sidebar.open('sources-content')
     // intro.start()
     // document.getElementById('set-cookie-no-tour').addEventListener('click', setCookieNoTour)
-
 }
