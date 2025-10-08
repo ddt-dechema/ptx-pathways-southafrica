@@ -283,8 +283,10 @@ if (lang=="en") {
         
     $("#biogenic_intro").html(translations.biogenic_intro);
     $("#biogenic_IAP").html(translations.biogenic_IAP);
-    $("#biogenic_organic").html(translations.biogenic_organic);
+    $("#biogenic_solidwaste").html(translations.biogenic_solidwaste);
+    $("#biogenic_sewagesludge").html(translations.biogenic_sewagesludge);
     $("#biogenic_ELT").html(translations.biogenic_ELT);
+    $("#biogenic_forestry").html(translations.biogenic_forestry);
     $("#biogenic_methodology").html(translations.biogenic_methodology);
     $("#biogenic_sources").html(translations.biogenic_sources);
 
@@ -1111,7 +1113,7 @@ function startIntro() {
                 intro: `This PtX Hub map displays carbon sources in South Africa mapping! If you want, you can follow this short introduction to see the main functions, or you can skip the tour.<br>
                 <button id="set-cookie-no-tour" onclick="setCookieNoTour()" class="introjs-button" title="This is the only cookie used on this site. If you don't want to use cookies, the tour will be shown on each reload. Click anywhere outside the tour to make it disappear."><p>Don't show the tour again</p><p style="font-size: x-small; color: #746427;">&#9432; This will set a cookie.</p></button>
                 <hr>
-                <img src="Graph1.png" />
+                <img src="img/Comparison_industrial_biogenic_sources.png" />
                 The map shows both biogenic and industrial sources of CO₂. Although the current amount of CO₂ emitted by industrial plants is high, sustainable biogenic sources deserve more attention in the long term.`
             },
             {
@@ -1121,7 +1123,7 @@ function startIntro() {
             },
             {
                 element: '#biogenic-sources-tab-li',
-                intro: 'The available biogenic point sources are not the only source of biogenic carbon for PtX. You can learn more about additional decentralized potential carbon sources here, although they are not shown on this map',
+                intro: 'The available point sources are not the only source of biogenic carbon for PtX. You can learn more about additional decentralised potential carbon sources here.',
                 position: 'right'
             },
             {
@@ -1131,7 +1133,7 @@ function startIntro() {
             },
             {
                 element: '#info-tab-li',
-                intro: "Here you find information about the map and the data",
+                intro: "Here you can find information about the map and the data",
                 position: 'right'
             },
             {
