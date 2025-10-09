@@ -1138,7 +1138,7 @@ function startIntro() {
             },
             {
                 element: '#disclaimer-tab-li',
-                intro: "Legal or contact information are shown here. You can also restart the tour here.",
+                intro: "Legal or contact information is shown here. You can also restart the tour here.",
             },
             {
                 title: 'Close',
