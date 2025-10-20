@@ -1122,7 +1122,7 @@ function startIntro() {
             },
             {
                 element: '#emitter-tab-li',
-                intro: `<p class="intro">In this tab, you can filter through different types of carbon sources.<br>They are divided into industrial and biogenic sources.`,
+                intro: `<p class="intro">This map shows industrial (non-biogenic)  and biogenic point sources of carbon in the form of emitted CO<sub>2</sub>. You can click on the different buttons to toggle the visibility of the respective sources on the map. Additionally, you can manually select or deselect specific plant types.`,
                 position: 'right'
             },
             {
