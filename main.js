@@ -1109,44 +1109,48 @@ function startIntro() {
     tour = introJs.tour()
     .setOptions({
         steps: [{
-                title: 'Welcome',
-                intro: `This PtX Hub map displays carbon sources in South Africa mapping! If you want, you can follow this short introduction to see the main functions, or you can skip the tour.<br>
-                <button id="set-cookie-no-tour" onclick="setCookieNoTour()" class="introjs-button" title="This is the only cookie used on this site. If you don't want to use cookies, the tour will be shown on each reload. Click anywhere outside the tour to make it disappear."><p>Don't show the tour again</p><p style="font-size: x-small; color: #746427;">&#9432; This will set a cookie.</p></button>
+                title: 'Carbon sources in South Africa',
+                intro: `<p class="intro">This map displays carbon sources in South Africa. You can follow this short introduction to see the main functions, or you can skip the tour.<br>
+                <button id="set-cookie-no-tour" onclick="setCookieNoTour()" class="introjs-button" title="This is the only cookie used on this site. If you don't want to use cookies, the tour will be shown on each reload. Click anywhere outside the tour to make it disappear."
+                >
+                <p style="margin-bottom: 0;">Don't show the tour again<br><small> &#9432; This will set a cookie.</small></p></button>
+                
                 <hr>
-                <img src="img/Comparison_industrial_biogenic_sources.png" />
-                The map shows both biogenic and industrial sources of CO₂. Although the current amount of CO₂ emitted by industrial plants is high, sustainable biogenic sources deserve more attention in the long term.`
+                <img src="img/Comparison_industrial_biogenic_sources.png" style="width:250px" />
+                <p class="intro" style="margin-bottom: unset;">The graph above compares the amounts of carbon available as CO₂ from the industrial and biogenic point sources shown on the map. Although the current amount of CO₂ emitted by industrial plants is high, sustainable biogenic sources deserve more attention in the long term.</p>
+                </p>`
             },
             {
                 element: '#emitter-tab-li',
-                intro: 'In this tab, you can filter through different types of carbon sources.<br>They are divided into industrial and biogenic sources.',
+                intro: `<p class="intro">In this tab, you can filter through different types of carbon sources.<br>They are divided into industrial and biogenic sources.`,
                 position: 'right'
             },
             {
                 element: '#biogenic-sources-tab-li',
-                intro: 'The available point sources are not the only source of biogenic carbon for PtX. You can learn more about additional decentralised potential carbon sources here.',
+                intro: `<p class="intro">The available point sources are not the only source of biogenic carbon for PtX. You can learn more about additional decentralised potential carbon sources here.`,
                 position: 'right'
             },
             {
                 element: '#data-tab-li',
-                intro: 'Information on data used and the methodology are explained in this tab.',
+                intro: `<p class="intro">Information on data used and the methodology are explained in this tab.`,
                 position: 'right'
             },
             {
                 element: '#info-tab-li',
-                intro: "Here you can find information about the map and the data",
+                intro: `<p class="intro">Here you can find information about the map and the data.`,
                 position: 'right'
             },
             {
                 element: '#disclaimer-tab-li',
-                intro: "Legal or contact information is shown here. You can also restart the tour here.",
+                intro: `<p class="intro">Legal or contact information is shown here. You can also restart the tour here.`,
             },
             {
                 title: 'Close',
                 element: "#sidebar-close-sources-span",
-                intro: 'This closes the sidebar so you can focus on the map.'
+                intro: `<p class="intro">This closes the sidebar so you can focus on the map`,
             },
             {
-                intro: "Click on any bubble to see more information about it.<br>That's it, now feel free to play with the map."
+                intro: `<p class="intro">Click on any bubble to see more information about it.<br>That's it, now feel free to play with the map`,
             }
         ],
         // doneLabel: `<div title="This is the only cookie used on this site. \

@@ -201,6 +201,10 @@ ul.is-bullet {
   src: url('source-sans-pro-v13-latin-regular.woff2')  format('woff');
 }
 
+p.intro {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 body, .popup-content {
   /* added to try to match the PtX Hub style */
   font-family: "Source Sans Pro", arial, serif;
