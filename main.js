@@ -83,7 +83,7 @@ var sliderValue_old = 1;
 // Specify the property you want to find the maximum value for
 var propertyToFindMax = 'CO2_emissions_t';
 // Initialize a variable to store the maximum value
-var maxEmissionsArgentina = -Infinity; // Start with negative infinity as an initial value
+var maxEmissionsCountry = -Infinity; // Start with negative infinity as an initial value
 // var maxRadius_Mt = -Infinity; // Start with negative infinity as an initial value
 var maxRadius_kt = -Infinity; // Start with negative infinity as an initial value
 
@@ -125,7 +125,7 @@ var radius_slider = document.getElementById('radius_slider');
 radius_slider.addEventListener('input', function () {
     // Get the current slider value
     sliderValue = parseFloat(radius_slider.value);
-    maxRadius_kt=maxEmissionsArgentina/1000 * sliderValue;
+    maxRadius_kt=maxEmissionsCountry/1000 * sliderValue;
     radius_slider_output.innerHTML = sliderValue;    
     createScale(sliderValue);
     // Call the function to update circle sizes
@@ -363,44 +363,6 @@ for (var key in obj) {
 return true;
 }
 
-// // Function to add the GeoJSON layer to the map
-// function addGeoJSONLayer(filterValue) {
-//   return fetch(geojsonURL)
-//     .then(response => response.json())
-//     .then(data => {
-//       const filteredData = data.features.filter(function (feature) {
-//         const hasValidCoordinates = feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates);
-//         const matchesIndustry = feature.properties.Industry === filterValue;
-//         return hasValidCoordinates && matchesIndustry;
-//       });
-
-//       const geojsonLayer = L.geoJSON(filteredData, {
-//         pointToLayer: function (feature, latlng) {
-//           if (feature.geometry && feature.geometry.coordinates && !isEmptyObject(feature.geometry.coordinates) && feature.properties.CO2_emissions_t > 0) {
-//             return L.circleMarker(latlng, {
-//               radius: Math.sqrt(feature.properties.CO2_emissions_t / (maxRadius_kt * 1000)) * 50 * sliderValue,
-//               color: emissionTypeColors_D[filterValue],
-//               fillColor: emissionTypeColors_D[filterValue],
-//               weight: 1,
-//               opacity: 0.7,
-//               fillOpacity: 0.5
-//             }).bindPopup(addCO2argentinaPopupHandler(feature));
-//           } else {
-//             if (!(parseFloat(feature.properties.CO2_emissions_t) > 0)) {
-//               console.log(feature.properties.Name, "(Company:", feature.properties.Company, ") has no CO2 emissions");
-//             } else if (!feature.geometry) {
-//               console.error(feature.properties.Name, "(Company:", feature.properties.Company, ") has no coordinates");
-//             }
-//           }
-//         }
-//       });
-
-//       layers[filterValue] = geojsonLayer;
-//       geojsonLayer.addTo(map);
-//       return geojsonLayer; // wichtig: etwas zurückgeben, sodass das Promise einen Wert hat
-//     });
-// }
-
 // Function to toggle all layers
 function toggleAllLayers() {
 // wenn nur ein Teil oder kein Layer zu sehen ist, dann alle einschalten
@@ -560,92 +522,75 @@ if (!biogenicLayersVisible || !industrialLayersVisible) {
 const key = 'tqfuJhSDIhJBFNXpuIIr';
 
 function showMap(reload, language, zoomlevel, center, style) {
-/* allows us to create filters within a Leaflet GeoJSON layer */
-L.GeoJSON.include({
-    setFilter: function (originalData, _) {
-        this.options.filter = _
-        this.clearLayers()
-        this.addData(originalData)
-        return this
+    /* allows us to create filters within a Leaflet GeoJSON layer */
+    L.GeoJSON.include({
+        setFilter: function (originalData, _) {
+            this.options.filter = _
+            this.clearLayers()
+            this.addData(originalData)
+            return this
+        }
+    })
+
+    // South Africa center
+    let position = [-31.977479, 26.236878];
+    let zoom = 5;
+
+    if (zoomlevel && center) {
+        zoom = zoomlevel;
+        position = center;
     }
-})
+    // SET DEFAULT LANGUAGE OF THE NAMES OF LOCATIONS ON THE MAP TO ENGLISH
+    maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
 
-// South Africa center
-let position = [-31.977479, 26.236878];
-let zoom = 5;
+    // SET MAP BOUNDARIES 
+    // dragging and panning of the map to other countries not possible
+    bounds = new L.LatLngBounds(
+        new L.LatLng(-4.300000, -22.00000), // Rand oben links 
+        new L.LatLng(-38.032825, 37.081656) // Rand unten rechts
+        );
+    /* Set up the map with initial center and zoom level */
+    map = L.map('map', {
+        center: position,
+        zoom: zoom,     
+        scrollWheelZoom: false,
+        zoomControl: false, // to put the zoom butons on the right
+        minZoom: 5,     // damit man nicht zu weit rauszoomen kann
+        maxBounds: bounds,  // [    // damit man nicht nach links,rechts,oben, unten schieben kann; DISABLE PANNING
+        maxBoundsViscosity: 1    // damit gar kein panning außerhalb der bounds möglich ist. 
+                                // 0: bouncing back; 1: no panning at all possible
+    })
 
-if (zoomlevel && center) {
-    zoom = zoomlevel;
-    position = center;
-}
-// SET DEFAULT LANGUAGE OF THE NAMES OF LOCATIONS ON THE MAP TO ENGLISH
-maptilersdk.config.primaryLanguage = maptilersdk.Language.ENGLISH;
+    L.control.zoom({
+        position: 'topright'
+    }).addTo(map);
 
-// SET MAP BOUNDARIES 
-// dragging and panning of the map to other countries not possible
-bounds = new L.LatLngBounds(
-    new L.LatLng(-4.300000, -22.00000), // Rand oben links 
-    new L.LatLng(-38.032825, 37.081656) // Rand unten rechts
-    );
-/* Set up the map with initial center and zoom level */
-map = L.map('map', {
-    center: position,
-    zoom: zoom,     
-    scrollWheelZoom: false,
-    zoomControl: false, // to put the zoom butons on the right
-    minZoom: 5,     // damit man nicht zu weit rauszoomen kann
-    maxBounds: bounds,  // [    // damit man nicht nach links,rechts,oben, unten schieben kann; DISABLE PANNING
-    maxBoundsViscosity: 1    // damit gar kein panning außerhalb der bounds möglich ist. 
-                            // 0: bouncing back; 1: no panning at all possible
-})
+    // The decision is to only take the bright (V1) as the default layer
+    map.bright= L.maptilerLayer({
+        attribution: '<a href="https://ptx-hub.org/south-africa/" target="_blank"> International PtX Hub, South Africa</a>',
+        apiKey: key,
+        style:'bright', // we take this one
+    }).addTo(map);
 
-L.control.zoom({
-    position: 'topright'
-}).addTo(map);
+    // // If other tiles should be used:
+    // map.bright_v2 = L.maptilerLayer({
+    // attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub, Argentina</a>',
+    // apiKey: key,        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub, Argentina</a>',
+    //     style:'bright-v2',
+    // })
 
-// The decision is to only take the bright (V1) as the default layer
-map.bright= L.maptilerLayer({
-    attribution: '<a href="https://ptx-hub.org/south-africa/" target="_blank"> International PtX Hub, South Africa</a>',
-    apiKey: key,
-    style:'bright', // we take this one
-}).addTo(map);
-
-// // If other tiles should be used:
-// map.bright_v2 = L.maptilerLayer({
-// attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub, Argentina</a>',
-// apiKey: key,        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub, Argentina</a>',
-//     style:'bright-v2',
-// })
-
-/* Add the zoom buttons */
-map.sidebar = L.control.sidebar('sidebar', {
-    position: 'left'
-}).addTo(map)
-/* On the map, scrolling should zoom */
-map.on('focus', () => {
-    map.scrollWheelZoom.enable()
-})
-/* Outside of the map, scrolling should not zoom */
-map.on('blur', () => {
-    map.scrollWheelZoom.disable()
-})
-/* This is to put the emissions in the foreground on high zoom levels */
-// map.on("zoomend", function (e) {
-//     for (type in chemicalParkMarkers) {
-//         if (e.target._zoom > 7 && !chemicalParkMarkers.isBack) {
-//             chemicalParkMarkers[type].bringToBack()
-//             chemicalParkMarkers[type].isBack = true
-//         } else {
-//             chemicalParkMarkers[type].bringToFront()
-//             chemicalParkMarkers[type].isBack = false
-//         }
-//     }
-// })
-
-// if you add additional labels, the layer level is relevant
-// map.createPane('labels')
-// map.getPane('labels').style.zIndex = 620; // a value of 650 will make the TileLayer with the labels show on top of markers but below pop-ups.
-// map.getPane('labels').style.pointerEvents = 'none'; // If a user clicks anywhere on the map, the web browser will assume she clicked on the labels tiles, and not on the GeoJSON or on the markers
+    /* Add the zoom buttons */
+    map.sidebar = L.control.sidebar('sidebar', {
+        position: 'left'
+    }).addTo(map)
+    /* On the map, scrolling should zoom */
+    map.on('focus', () => {
+        map.scrollWheelZoom.enable()
+    })
+    /* Outside of the map, scrolling should not zoom */
+    map.on('blur', () => {
+        map.scrollWheelZoom.disable()
+    })
 }
 
 function loadGlobalDefs() {
@@ -670,7 +615,7 @@ let createScale = (sliderValue) => {
         .attr("height", height);
     // The scale you use for bubble size
     // if maxRadius is not set (because slider was not used yet)
-    // use maxEmissions of Argentina
+    // use maxEmissions of country
     
     //reset the legend
     scale.removeChild(scale.children[1]);
@@ -749,7 +694,6 @@ svg
 };
 
 function addCO2argentinaPopupHandler(feature) {
-// let nace = globalModel.emissions.categories.naceCategories.items
 if (feature.properties) {
     let thisEmission = 0;    
     thisEmission = formatSI_own(feature.properties.CO2_emissions_t/1000) + " kt CO<sub>2</sub>/year";
@@ -780,28 +724,6 @@ if (feature.properties) {
             </div>
         </div>
     </div>`;
-    // Version with tables - not used here
-    // return `<div class="popup-content">
-    //     <div class="card border-0">
-    //         <h5 class="card-header border-0" style="color: white; background-color: ${emissionTypeColors_D[feature.properties.Industry]}">
-    //             ${thisNameCompany}
-    //         </h5>
-    //         <div class="card-body ptxhub-background ptxhub-text">
-    //             <table class="table table-hover table-custom">
-    //                 <tr><th>Type of Industry</th><td>${feature.properties.Industry}</td></tr>
-    //                 <tr><th>Type of Emission</td><td>${feature.properties.Source_CO2_emissions}</td></tr>
-    //             <tbody class="ptx-table-group-divider">
-    //                 <tr><th>Emissions</td><td>${thisEmission}</td></tr>
-    //                 <tr><th>Reference year</td><td>${feature.properties.year_emission ? feature.properties.year_emission : "N/A"}</td></tr>
-    //                 <tr><th>Data Source</td><td>${thisSource}</td></tr>
-    //             </tbody>
-    //             <tbody class="ptx-table-group-divider">
-    //                 <tr><th>City</td><td>${feature.properties.City?feature.properties.City:"N/A"}</td></tr>
-    //                 <tr><th>Province</td><td>${feature.properties.Province}</td></tr>
-    //             </tbody>
-    //             </table>
-    //     </div>
-    // </div>`;
 } else {
     console.log(feature);
 }
@@ -1039,13 +961,13 @@ document.addEventListener('DOMContentLoaded', () => {
       // --- Max & Scale ---
       data.features.forEach(function (feature) {
         const val = parseFloat(feature.properties[propertyToFindMax]);
-        if (Number.isFinite(val) && feature.geometry?.coordinates && val > maxEmissionsArgentina) {
-          maxEmissionsArgentina = val;
+        if (Number.isFinite(val) && feature.geometry?.coordinates && val > maxEmissionsCountry) {
+          maxEmissionsCountry = val;
         }
       });
 
       // WICHTIG: numerisch lassen!
-      maxRadius_kt = maxEmissionsArgentina / 1000;         // Zahl für die Radien
+      maxRadius_kt = maxEmissionsCountry / 1000;         // Zahl für die Radien
       maxRadius_kt_label = format_nodecimal(maxRadius_kt); // nur für die Legende/Text
 
       createScale(1); // darf intern maxRadius_kt_label für Anzeige benutzen
