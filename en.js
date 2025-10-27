@@ -1,11 +1,11 @@
 var translations_en = {
   
-  table_emissions_title: `Total <span style="color:red; background:yellow">Emissions</span>`,
+  table_emissions_title: `Total CO<sub>2</sub> Emissions`,
   sidebar_title: `Sources of Carbon in South Africa`,
   introduction_title: `<h2>General Information</h2>`,
   introduction_text: `Carbon dioxide (CO<sub>2</sub>), a greenhouse gas often produced as an industrial byproduct, is currently released into the atmosphere at most production sites. However, it has significant potential as a raw material for carbon-based Power-to-X (PtX) products, such as e-methanol and synthetic fuels (e-fuels). The competitiveness of these products depends largely on the availability and quality of the carbon supply, making it essential to identify reliable sources.<br>
   <br> This map identifies carbon sources in the form of CO<sub>2</sub> across South Africa, providing crucial data on their quantity, location, and type. This information is key for optimising carbon utilisation and accelerating the development of Power-to-X (PtX) projects in the country.<br>
-  <br>While the current carbon sources in South Africa are primarily derived from industrial point <span style="color:red; background:yellow">emissions</span>, it is important to emphasise that, in the long term, the carbon needed for these applications should come from a non-fossil, closed carbon cycle to ensure carbon neutrality. Direct Air Capture (DAC) and biogenic sources, both point CO<sub>2</sub> and decentralised biomass sources, could help meet this requirement, provided sustainability criteria are considered.<br>`,
+  <br>While the current carbon sources in South Africa are primarily derived from industrial point emissions it is important to emphasise that, in the long term, the carbon needed for these applications should come from a non-fossil, closed carbon cycle to ensure carbon neutrality. Direct Air Capture (DAC) and biogenic sources, both point CO<sub>2</sub> and decentralised biomass sources, could help meet this requirement, provided sustainability criteria are considered.<br>`,
   project: `<br><h3>The International Power-to-X Hub</h3> The International PtX Hub is implemented by the Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ) GmbH on behalf of the German Federal Ministry for Economic Affairs and Climate Action (BMWK). Financed by the International Climate Initiative (Internationale Klimaschutzinitiative, IKI), the International PtX Hub is a contribution to the German National Hydrogen Strategy of 2020 and represents one of the four pillars of the BMUV’s PtX action programme initiated in 2019.
     In South Africa, the political partner is the Department of Trade Industry and Competition (DTIC). The implementing partners are the Energy Centre of the Council for Scientific and Industrial Research (CSIR), Agora Energiewende and DECHEMA e.V.`,
   language_picker: `<h3>Cambiar el idioma</h3>`,
@@ -30,7 +30,7 @@ var translations_en = {
   statistics: `Total emissions in South Africa for selected filters:`,
   statistics_total: ` &nbsp;kilotonnes of CO<sub>2</sub> per year`,
   circle_title: `<br>Adjust Data Point Size`,
-  circle_size: `If you want to change the circle sizes (to be able to properly see the locations with rather few <span style="color:red; background:yellow;">emissions</span>), use this slider.`,  
+  circle_size: `If you want to change the circle sizes (to be able to properly see the locations with fewer CO<sub>2</sub> emissions), use this slider.`,  
   zoom_factor: `Zoom factor`,
   scale_title: `CO<sub>2</sub> in <span title="kilo or 1&nbsp;000 tonnes" style="border-bottom: 1px dashed blue">kt</span>/year`,
  

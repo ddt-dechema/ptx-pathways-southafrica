@@ -55,7 +55,7 @@ if (lang==="en") {
 var table = "<table>\
     <tr>\
         <th id='table_header_industry_type'>Industry</th>\
-        <th style='text-align: right;' id='table_header_total_emissions'>Total Emissions (kilotonnes)</th>\
+        <th style='text-align: right;' id='table_header_total_emissions'>Total CO<sub>2</sub> Emissions (kilotonnes)</th>\
         <th style='text-align: right;' id='table_header_number_entries'>Number of Entries</th>\
     </tr>";
 } else if (lang==="es") {
@@ -572,13 +572,6 @@ function showMap(reload, language, zoomlevel, center, style) {
         style:'bright', // we take this one
     }).addTo(map);
 
-    // // If other tiles should be used:
-    // map.bright_v2 = L.maptilerLayer({
-    // attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub, Argentina</a>',
-    // apiKey: key,        attribution: '<a href="https://ptx-hub.org/argentina/" target="_blank"> International PtX Hub, Argentina</a>',
-    //     style:'bright-v2',
-    // })
-
     /* Add the zoom buttons */
     map.sidebar = L.control.sidebar('sidebar', {
         position: 'left'
@@ -693,7 +686,7 @@ svg
     .attr('alignment-baseline', 'middle');
 };
 
-function addCO2argentinaPopupHandler(feature) {
+function addCO2CountryPopupHandler(feature) {
 if (feature.properties) {
     let thisEmission = 0;    
     thisEmission = formatSI_own(feature.properties.CO2_emissions_t/1000) + " kt CO<sub>2</sub>/year";
@@ -890,7 +883,7 @@ function addGeoJSONLayerFromData(data, filterValue) {
           weight: 1,
           opacity: 0.7,
           fillOpacity: 0.5
-        }).bindPopup(addCO2argentinaPopupHandler(feature));
+        }).bindPopup(addCO2CountryPopupHandler(feature));
       } else {
         if (!(Number.isFinite(em) && em > 0)) {
           console.log(feature.properties.Name, "(Company:", feature.properties.Company, ")", "has no CO₂ data");
@@ -1031,14 +1024,18 @@ function startIntro() {
     tour = introJs.tour()
     .setOptions({
         steps: [{
-                title: 'Carbon sources in South Africa',
-                intro: `<p class="intro">This map displays carbon sources in South Africa. You can follow this short introduction to see the main functions, or you can skip the tour.<br>
+                title: `Introduction`,
+                intro: `<p class="intro">This map displays carbon sources in South Africa. You can follow this short introduction to see the main functions, or you can skip the tour.
+                <br> &#9432;  <small>The map is optimized for desktop use.</small></p>
                 <button id="set-cookie-no-tour" onclick="setCookieNoTour()" class="introjs-button" title="This is the only cookie used on this site. If you don't want to use cookies, the tour will be shown on each reload. Click anywhere outside the tour to make it disappear."
                 >
                 <p style="margin-bottom: 0;">Don't show the tour again<br><small> &#9432; This will set a cookie.</small></p></button>
-                
-                <hr>
-                <img src="img/Comparison_industrial_biogenic_sources.png" style="width:250px" />
+               `
+            },
+            {
+                title: `Carbon sources in South Africa`,
+                intro:` <div style="display: flex; justify-content: center;">
+                    <img src="img/Comparison_industrial_biogenic_sources.png" style="width:250px;"></div>
                 <p class="intro" style="margin-bottom: unset;">The graph above compares the amounts of carbon available as CO₂ from the industrial and biogenic point sources shown on the map. Although the current amount of CO₂ emitted by industrial plants is high, sustainable biogenic sources deserve more attention in the long term.</p>
                 </p>`
             },
