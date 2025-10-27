@@ -1041,7 +1041,8 @@ function startIntro() {
             },
             {
                 element: '#emitter-tab-li',
-                intro: `<p class="intro">In this tab, you can filter through different types of carbon sources.<br>They are divided into industrial and biogenic sources.`,                position: 'right'
+                intro: `<p class="intro">In this tab, you can filter through different types of carbon sources.<br>They are divided into industrial and biogenic sources.`,
+                position: 'bottom'
             },
             {
                 element: '#biogenic-sources-tab-li',
