@@ -1026,7 +1026,7 @@ function startIntro() {
         steps: [{
                 title: `Introduction`,
                 intro: `<p class="intro">This map displays carbon sources in South Africa. You can follow this short introduction to see the main functions, or you can skip the tour.
-                <br> &#9432;  <small>The map is optimized for desktop use.</small></p>
+                <br> &#9432;  <small>The map is optimised for desktop use.</small></p>
                 <button id="set-cookie-no-tour" onclick="setCookieNoTour()" class="introjs-button" title="This is the only cookie used on this site. If you don't want to use cookies, the tour will be shown on each reload. Click anywhere outside the tour to make it disappear."
                 >
                 <p style="margin-bottom: 0;">Don't show the tour again<br><small> &#9432; This will set a cookie.</small></p></button>
@@ -1047,12 +1047,12 @@ function startIntro() {
             {
                 element: '#biogenic-sources-tab-li',
                 intro: `<p class="intro">The available point sources are not the only source of biogenic carbon for PtX. You can learn more about additional decentralised potential carbon sources here.`,
-                position: 'right'
+                position: 'bottom'
             },
             {
                 element: '#data-tab-li',
                 intro: `<p class="intro">Information on data used and the methodology are explained in this tab.`,
-                position: 'right'
+                position: 'bottom'
             },
             {
                 element: '#info-tab-li',
