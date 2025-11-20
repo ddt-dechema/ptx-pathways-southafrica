@@ -1062,6 +1062,7 @@ function startIntro() {
             {
                 element: '#disclaimer-tab-li',
                 intro: `<p class="intro">Legal or contact information is shown here. You can also restart the tour here.`,
+                position: 'right'
             },
             {
                 title: 'Close',
